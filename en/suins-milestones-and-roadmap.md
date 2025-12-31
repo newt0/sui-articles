@@ -1,6 +1,6 @@
 [SuiNS Achievements and Vision for the Future](https://blog.sui.io/suins-milestones-and-roadmap/)
 
-[**Sui Name Service (SuiNS)**](https://suins.io/?ref=blog.sui.io)**,** the leading naming service on Sui, enhances onchain interactions by replacing complex wallet addresses with user-friendly, memorable names. Through its previous two years, the service has undergone refinements and improvements to better serve its mission of creating easy, human-readable identities.
+[Sui Name Service (SuiNS)](https://suins.io/?ref=blog.sui.io), the leading naming service on Sui, enhances onchain interactions by replacing complex wallet addresses with user-friendly, memorable names. Through its previous two years, the service has undergone refinements and improvements to better serve its mission of creating easy, human-readable identities.
 
 Drawing on its common usage in social media, SuiNS takes it a step further and by [incorporating the ‘@’ symbol](https://blog.sui.io/suins-new-naming-standard/), making Web3 identities even more intuitive. Users familiar with tagging friends on social platforms will find SuiNS’s @name format familiar, facilitating easier transfers. 
 
@@ -12,43 +12,43 @@ Now SuiNS is about to take another huge step with [community governance](https:/
 
 ![](https://blog.sui.io/content/images/2024/09/RDMP-Full-.jpg)
 
-**September 2022: SuiNS Founded**\
+September 2022: SuiNS Founded\
 SuiNS was established, setting the foundation for a user-friendly naming service tailored for the Sui blockchain, with a focus on simplifying onchain interactions.
 
-**October 2022: SuiNS Live on Testnet**\
+October 2022: SuiNS Live on Testnet\
 The first iteration of the SuiNS website launched, allowing early users to explore and interact with the service on Sui Testnet. This moment allowed the community to begin providing essential feedback and played an active role in shaping its development.
 
-**December 2022: SuiNS Mobile Site Launched**\
+December 2022: SuiNS Mobile Site Launched\
 SuiNS developed a mobile site enabling users to manage their names conveniently on the go.
 
-**January 2023: Surpassing 100,000 Followers**\
+January 2023: Surpassing 100,000 Followers\
 SuiNS attracted more than 100,000 followers on Twitter and Discord, highlighting its growing influence within the Sui community.
 
-**January 2023: SuiNS and Frens AMAs Reach 3,000 Audience Members**\
+January 2023: SuiNS and Frens AMAs Reach 3,000 Audience Members\
 The “SuiNS and Frens” AMAs attracted over 3,000 participants, fostering deeper community engagement and interest.
 
-**February 2023: 300,000 Unique Wallet Interactions**\
+February 2023: 300,000 Unique Wallet Interactions\
 SuiNS introduced [Sui.id](http://sui.id/?ref=blog.sui.io), enabling users to bridge their Web3 persona to Web2 devices, which contributed to surpassing 300,000 unique wallet interactions on the platform.
 
-**May 2023: SuiNS Goes Live on Mainnet**\
+May 2023: SuiNS Goes Live on Mainnet\
 SuiNS made its official debut on Sui Mainnet, featuring an auction system that allowed all users to have a fair chance at acquiring their preferred names.
 
-**June 2023: 3,000 Live Auctions Achieved**\
+June 2023: 3,000 Live Auctions Achieved\
 Within a month of the Mainnet launch, SuiNS conducted over 3,000 live auctions, demonstrating strong demand for the name service.
 
-**July 2023: Integration with Over 20 Partners**\
+July 2023: Integration with Over 20 Partners\
 SuiNS was integrated by more than 20 partners and is an integral part of the Sui explorers, enhancing its utility across the Sui network.
 
-**October 2023: Full Discount and Couponing Mechanism Built**\
+October 2023: Full Discount and Couponing Mechanism Built\
 SuiNS introduced a discount and couponing system, allowing users opportunities to acquire SuiNS names at discounted rates.
 
-**March 2024: Integration into DeFi Apps and Leaderboards**\
+March 2024: Integration into DeFi Apps and Leaderboards\
 SuiNS began integrating with DeFi apps and leaderboards so that users could easily identify which account they are using on an app and recognize each other on leaderboards.
 
-**June 2024: SuiNS Refresh and New Features**\
+June 2024: SuiNS Refresh and New Features\
 SuiNS refresh introduced a suite of new features, including subnames and a new @ naming standard, complemented by a freshly redesigned website and user experience. 
 
-**August 2024: Transition to Decentralization Announced**\
+August 2024: Transition to Decentralization Announced\
 SuiNS announced its transition to a decentralized model, ushering in a new era of development and empowering the community to have a direct impact on its future direction.
 
 Every milestone in the SuiNS timeline has brought SuiNS a step closer to its goals of removing friction and enabling powerful identity management solutions. As SuiNS embraces the next stage of its evolution, the focus now shifts to empowering the community in shaping the future of SuiNS. Together, the community will steer SuiNS towards achieving new goals in this next chapter.

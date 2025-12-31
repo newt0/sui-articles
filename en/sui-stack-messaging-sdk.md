@@ -24,11 +24,11 @@ This is exactly what the Sui Stack Messaging SDK is designed to deliver. By inte
 
 The Messaging SDK isn’t just another messaging library. It interacts with three core layers of the Sui Stack to unlock communication as a programmable primitive:
 
-* **Sui** provides verifiable identity and object-centric state, ensuring messages are first-class components of application logic.
+* Sui provides verifiable identity and object-centric state, ensuring messages are first-class components of application logic.
 
-* **Walrus** delivers decentralized, content-addressed storage for attachments, secured with proof of availability.
+* Walrus delivers decentralized, content-addressed storage for attachments, secured with proof of availability.
 
-* **Seal** enforces programmable access control, making policies like token-gated chats, time-locked threads, or role-based groups simple to define.
+* Seal enforces programmable access control, making policies like token-gated chats, time-locked threads, or role-based groups simple to define.
 
 Together, these layers transform messaging from a side-channel into infrastructure. Instead of bolted-on chat tools, developers can weave secure, wallet-linked communication directly into application flows, with guarantees of privacy and persistence that centralized systems cannot match.
 
@@ -52,9 +52,9 @@ The Messaging SDK makes possible a wide range of unique scenarios for builders a
 
 Consider a few examples:
 
-* **Customer support**: Deliver in-app support without pushing users to external platforms. Chats are wallet-linked, encrypted, and recoverable across devices, building trust and continuity.
-* **Cross-app workflows**: Imagine a user buying an NFT in one marketplace and automatically opening a private, secure chat with a DeFi protocol about collateral options, all within a seamless, secure thread.
-* **AI agent coordination**: Messaging can serve as a secure channel for agent-to-agent or app-to-agent communication, where an AI assistant can interact with a user or another AI agent, with encryption and access control guaranteed by Seal.
+* Customer support: Deliver in-app support without pushing users to external platforms. Chats are wallet-linked, encrypted, and recoverable across devices, building trust and continuity.
+* Cross-app workflows: Imagine a user buying an NFT in one marketplace and automatically opening a private, secure chat with a DeFi protocol about collateral options, all within a seamless, secure thread.
+* AI agent coordination: Messaging can serve as a secure channel for agent-to-agent or app-to-agent communication, where an AI assistant can interact with a user or another AI agent, with encryption and access control guaranteed by Seal.
 
 And these are just the start. The same framework also can support token-gated community discussions, recoverable conversations that sync across devices without centralized servers, and event-driven communication triggered by onchain activity — whether that’s a trade confirmation, a governance vote, or a content unlock.
 

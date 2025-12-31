@@ -8,9 +8,9 @@
 
 ## Overview
 
-Decentralized finance (DeFi) lets you put your crypto to work on the blockchain and earn returns. It’s powerful, but using it often means figuring out different apps and unfamiliar steps. That friction prevents many people from getting started. That’s why we built **Slush**: a simple, cross-platform wallet that makes using Sui feel as easy as any everyday app.
+Decentralized finance (DeFi) lets you put your crypto to work on the blockchain and earn returns. It’s powerful, but using it often means figuring out different apps and unfamiliar steps. That friction prevents many people from getting started. That’s why we built Slush: a simple, cross-platform wallet that makes using Sui feel as easy as any everyday app.
 
-Today, Slush takes another step forward. Say hello to **Slush Strategies**, a new, simple way to earn onchain. There’s no need to visit external apps. Just tap and earn. In this blog, we’ll explain Slush, break down Strategies, and show you how it simplifies DeFi.
+Today, Slush takes another step forward. Say hello to Slush Strategies, a new, simple way to earn onchain. There’s no need to visit external apps. Just tap and earn. In this blog, we’ll explain Slush, break down Strategies, and show you how it simplifies DeFi.
 
 ## What Is Slush? The Easiest Way to Explore Sui
 
@@ -30,17 +30,17 @@ Slush will continue to add support for more assets and protocols over time, givi
 
 ## How Slush Strategies Works: A Simple Step-by-Step Guide
 
-**Step 1:  Choose how you want to earn.** Pick the type of asset you want to use (stablecoins, SUI, WAL, etc). Each strategy shows the protocol and projected yield.
+Step 1:  Choose how you want to earn. Pick the type of asset you want to use (stablecoins, SUI, WAL, etc). Each strategy shows the protocol and projected yield.
 
-**Step 2: Slush makes sure you are using the right token.** Every strategy requires a specific asset. If you don’t have it, Slush will guide you through converting. For example, if a strategy uses USDC but you only hold SUI, Slush will help you convert SUI into USDC.
+Step 2: Slush makes sure you are using the right token. Every strategy requires a specific asset. If you don’t have it, Slush will guide you through converting. For example, if a strategy uses USDC but you only hold SUI, Slush will help you convert SUI into USDC.
 
-**Step 3: Tap to submit.** Slush bundles the necessary steps — like swapping, depositing, and gas preparation — into a single onchain transaction and submits it to the underlying protocol for execution. What normally takes multiple steps across multiple apps now happens in one go
+Step 3: Tap to submit. Slush bundles the necessary steps — like swapping, depositing, and gas preparation — into a single onchain transaction and submits it to the underlying protocol for execution. What normally takes multiple steps across multiple apps now happens in one go
 
-**Step 4: Rewards are handled automatically.** As your position earns, claims and compounding happen in the background without extra transactions. Set it and forget it.
+Step 4: Rewards are handled automatically. As your position earns, claims and compounding happen in the background without extra transactions. Set it and forget it.
 
-**Step 5. Check in or withdraw anytime.** Your positions sit in the \[Strategies] view under \[Earn], where you can track performance, add to a position, or withdraw with a few taps.
+Step 5. Check in or withdraw anytime. Your positions sit in the \[Strategies] view under \[Earn], where you can track performance, add to a position, or withdraw with a few taps.
 
-Check out our [***Slush Strategies How-To Guide***](https://slush.app/guides/slush-strategies?ref=blog.sui.io) for a more detailed walkthrough.
+Check out our [*Slush Strategies How-To Guide*](https://slush.app/guides/slush-strategies?ref=blog.sui.io) for a more detailed walkthrough.
 
 ## Where the Yield Comes From
 
@@ -62,7 +62,7 @@ Normally, accessing these opportunities means swapping into the right token, ope
 
 Slush Strategies turns all of that into a single, seamless experience. It’s the same real, onchain yield you’d get by doing everything manually. Just with a lot less friction.
 
-What’s important is this: **Slush isn’t creating new yield. It’s simplifying access to yield that already exists.** You still earn directly from the underlying protocols. Slush just removes the pain points. It’s the same DeFi power. Just without the DeFi admin.
+What’s important is this: Slush isn’t creating new yield. It’s simplifying access to yield that already exists. You still earn directly from the underlying protocols. Slush just removes the pain points. It’s the same DeFi power. Just without the DeFi admin.
 
 ## Why All This Matters
 
@@ -80,4 +80,4 @@ If you already use Slush, just open the app and tap \[Earn]. You’ll see \[Stra
 
 If you’re new to Slush, download the app, create your wallet in seconds, and add the tokens you want to use. You don’t need any prior DeFi experience. Once you’re set up, Strategies is ready to go: clear options, transparent yields, and one-tap execution. 
 
-**Onchain earning from DeFi protocols has never been this straightforward.**
+Onchain earning from DeFi protocols has never been this straightforward.

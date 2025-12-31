@@ -20,16 +20,16 @@ Whenever users create or modify objects, they pay a [storage fee](https://blog.s
 
 That fee has two parts:
 
-* **Refundable deposit**: Locked in the storage fund for as long as the object exists. If the object is deleted or slimmed down, a prorated portion of the deposit is returned.
-* **Non-refundable fee**: Permanently absorbed by the storage fund. This portion is never returned, removing that SUI from active circulation forever.
+* Refundable deposit: Locked in the storage fund for as long as the object exists. If the object is deleted or slimmed down, a prorated portion of the deposit is returned.
+* Non-refundable fee: Permanently absorbed by the storage fund. This portion is never returned, removing that SUI from active circulation forever.
 
 ## How the storage fund creates deflationary pressure
 
 This design makes the storage fund the most powerful deflationary mechanism in Sui. Here’s why:
 
-1. **Non-refundable storage fees**: Every time an object is created or modified, part of the payment stays permanently in the storage fund, removing that SUI from active circulation permanently.
-2. **Mutable object deposits**: For as long as an object exists, its deposit is frozen. Some may eventually be released if an action decreases their storage requirement, but many remain locked indefinitely.
-3. **Immutable object deposits**: Because immutable objects can never be changed or deleted, both their fee and deposits are never returned. That SUI is effectively removed from circulation forever.
+1. Non-refundable storage fees: Every time an object is created or modified, part of the payment stays permanently in the storage fund, removing that SUI from active circulation permanently.
+2. Mutable object deposits: For as long as an object exists, its deposit is frozen. Some may eventually be released if an action decreases their storage requirement, but many remain locked indefinitely.
+3. Immutable object deposits: Because immutable objects can never be changed or deleted, both their fee and deposits are never returned. That SUI is effectively removed from circulation forever.
 
 Together, these dynamics mean that nearly every transaction contributes to scarcity, locking or permanently removing SUI from circulation.
 

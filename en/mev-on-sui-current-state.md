@@ -16,28 +16,28 @@ Along with current mechanisms, we plan on building more to ensure our high-level
 
 Every trade on Sui introduces new information with potential profit opportunities. The MEV ecosystem on Sui is shaped via several mechanisms:
 
-1. Mechanisms for **submitting MEV transactions**.
-2. Mechanisms for **disseminating MEV opportunities**.
-3. Mechanisms for **distributing MEV revenue**.
-4. Mechanisms for **protecting user transactions.**
+1. Mechanisms for submitting MEV transactions.
+2. Mechanisms for disseminating MEV opportunities.
+3. Mechanisms for distributing MEV revenue.
+4. Mechanisms for protecting user transactions.
 
 Our general priorities are as follows:
 
-1. User **transaction protection** is more important than the amount of extracted value. Prioritize smaller slippage over larger extracted value. Avoid out-of-protocol auctions that increase latency with no way to opt out.
-2. **Network transparency** is preferable over offline deals with validators or relayers.
-3. Prioritize competition via **priority gas auctions (PGAs)** and discourage spamming behaviors leading to system inefficiencies: a perfect system we’re striving for makes the dominant strategy for a searcher to send a transaction with a priority fee determined by the extracted value.
-4. Encourage **rewards distribution** to ecosystem-aligned participants: the validators, stakers, apps, and users.
+1. User transaction protection is more important than the amount of extracted value. Prioritize smaller slippage over larger extracted value. Avoid out-of-protocol auctions that increase latency with no way to opt out.
+2. Network transparency is preferable over offline deals with validators or relayers.
+3. Prioritize competition via priority gas auctions (PGAs) and discourage spamming behaviors leading to system inefficiencies: a perfect system we’re striving for makes the dominant strategy for a searcher to send a transaction with a priority fee determined by the extracted value.
+4. Encourage rewards distribution to ecosystem-aligned participants: the validators, stakers, apps, and users.
 
 ## Transaction submission
 
-Since transactions that modify the same object are executed sequentially, clients compete to increase the chances of their execution order. From a system’s perspective, **priority gas auctions (PGAs)** are an efficient way to allocate resources and prevent spam while redistributing gas fees across participants.
+Since transactions that modify the same object are executed sequentially, clients compete to increase the chances of their execution order. From a system’s perspective, priority gas auctions (PGAs) are an efficient way to allocate resources and prevent spam while redistributing gas fees across participants.
 
-The key driver of priority gas auctions is **quantized execution**:
+The key driver of priority gas auctions is quantized execution:
 
-* Transactions that are ordered by consensus are processed in blocks. Traders compete for priority orders both **within** and **across** commits via gas auctions.
+* Transactions that are ordered by consensus are processed in blocks. Traders compete for priority orders both within and across commits via gas auctions.
 * This contrasts with CEX market makers, where execution priority depends purely on speed, achieved through low-latency networking and algorithms.
-* A higher consensus commit rate **reduces quantization effects**, making DEX execution more efficient but narrowing the PGA window.
-* Currently, PGAs of the non-congested objects matter for the fastest searchers only. With a **15 commits/sec** Sui rate, a 70 millisecond advantage in transaction submission speed is a deal breaker.
+* A higher consensus commit rate reduces quantization effects, making DEX execution more efficient but narrowing the PGA window.
+* Currently, PGAs of the non-congested objects matter for the fastest searchers only. With a 15 commits/sec Sui rate, a 70 millisecond advantage in transaction submission speed is a deal breaker.
   * Congested objects might defer transaction execution, which amplifies the importance of PGAs, since the window of the competing transactions is growing to potentially 10 times that of a regular consensus commit. 
 
 There are two separate mechanisms for steering transactions towards specific upcoming Sui commits:
@@ -54,20 +54,20 @@ There are two separate mechanisms for steering transactions towards specific upc
    1. A submitting validator is behind by a couple of consensus rounds: a transaction that is submitted by another validator might get ordered first.
    2. A validator who is a leader of the consensus round has a one-round advantage over any other validator submission.
 3. SIP-45 amplifies consensus submission for the gas prices that are higher than k x RGP (k is a system parameter that is set to 5 in the current configuration, and RGP is reference gas price). A transaction with a gas price of n x RGP is amplified n times.
-4. The **broader adoption of SIP-45** by both the app builders and the users creates a more efficient system with fair competition.
-   1. It’s important to note that SIP-45 doesn’t change the fundamental system properties from the client perspective: **it disincentivizes spamming** by providing a more efficient alternative.
+4. The broader adoption of SIP-45 by both the app builders and the users creates a more efficient system with fair competition.
+   1. It’s important to note that SIP-45 doesn’t change the fundamental system properties from the client perspective: it disincentivizes spamming by providing a more efficient alternative.
 
 ### Choosing the right gas price for a transaction
 
 There are two major factors a client should consider to determine the gas price of a submitted transaction:
 
-1. **Priority gas auction.**
-   * Within the consensus commit, transactions modifying the same object are **ordered by their gas price**, which creates fair competition across the searchers.
-2. **Consensus submission amplification.**
-   * As described above, the gas price over 5 x RGP **amplifies consensus submission** with n validators submitting the given transaction to consensus. Any gas price increase beyond the amplification threshold is reducing the probability of low-performer submission jitters. In practice, an amplification factor of 5 is enough for eliminating jittering, while the gas price of 100 x RGP unlocks the next round’s leader submission with high probability.
-3. **Avoiding congestion deferrals and cancellations.**
-   * Sui limits the wall clock time of checkpoint execution via controlling the rate of transactions modifying the same shared object. Transactions modifying a congested object are ordered according to their gas price, with the lower-priced transactions being deferred and ultimately canceled in order to limit the longest chain of sequential execution per checkpoint, a mechanism called [**object-based local fee markets**](https://docs.sui.io/guides/developer/advanced/local-fee-markets?ref=blog.sui.io). *(Note that while gas prices might surge for shared objects providing high arbitrage opportunities, they remain unchanged for the rest of the system.)*
-   * Full Nodes keep track of the gas prices of both the executed and the cancelled transactions mutating congested objects. The **results of a transaction dry-run** can therefore include both the lowest-priced-executed and the highest-priced-cancelled transaction gas prices for the congested objects modified by a given request. With this information, a client can determine the gas price required to avoid the deferral with high probability. *(Note, this work is just partially implemented and is going to be part of SDK within the next two months.)*
+1. Priority gas auction.
+   * Within the consensus commit, transactions modifying the same object are ordered by their gas price, which creates fair competition across the searchers.
+2. Consensus submission amplification.
+   * As described above, the gas price over 5 x RGP amplifies consensus submission with n validators submitting the given transaction to consensus. Any gas price increase beyond the amplification threshold is reducing the probability of low-performer submission jitters. In practice, an amplification factor of 5 is enough for eliminating jittering, while the gas price of 100 x RGP unlocks the next round’s leader submission with high probability.
+3. Avoiding congestion deferrals and cancellations.
+   * Sui limits the wall clock time of checkpoint execution via controlling the rate of transactions modifying the same shared object. Transactions modifying a congested object are ordered according to their gas price, with the lower-priced transactions being deferred and ultimately canceled in order to limit the longest chain of sequential execution per checkpoint, a mechanism called [object-based local fee markets](https://docs.sui.io/guides/developer/advanced/local-fee-markets?ref=blog.sui.io). *(Note that while gas prices might surge for shared objects providing high arbitrage opportunities, they remain unchanged for the rest of the system.)*
+   * Full Nodes keep track of the gas prices of both the executed and the cancelled transactions mutating congested objects. The results of a transaction dry-run can therefore include both the lowest-priced-executed and the highest-priced-cancelled transaction gas prices for the congested objects modified by a given request. With this information, a client can determine the gas price required to avoid the deferral with high probability. *(Note, this work is just partially implemented and is going to be part of SDK within the next two months.)*
 
 ## Disseminating transaction information
 
@@ -88,7 +88,7 @@ Each transaction on Sui introduces information with potential profit opportuniti
 
 ### Disseminating transaction information before validator submission
 
-As described in the previous section, there are Sui offchain auctions for submitting soft bundles following [SIP-19](https://github.com/sui-foundation/sips/blob/main/sips/sip-19.md?ref=blog.sui.io). These auctions intercept transaction submission via **offchain agreements between the apps and the auction system**, e.g., the one run by [Shio](https://www.getshio.com/explorer?ref=blog.sui.io).
+As described in the previous section, there are Sui offchain auctions for submitting soft bundles following [SIP-19](https://github.com/sui-foundation/sips/blob/main/sips/sip-19.md?ref=blog.sui.io). These auctions intercept transaction submission via offchain agreements between the apps and the auction system, e.g., the one run by [Shio](https://www.getshio.com/explorer?ref=blog.sui.io).
 
 This type of information dissemination assumes a well-behaved auction system that protects user transactions from potential sandwich attacks. Shio is incentivized to protect user transactions to maintain their business and therefore employs a number of auction techniques (bait transactions, random delays) to hurt the financial profitability of potential sandwich bots.
 

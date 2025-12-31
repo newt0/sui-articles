@@ -20,10 +20,10 @@ DAOs can be created for a wide range of purposes, from managing DeFi protocols t
 
 The traditional model of organizational governance often involves centralized decision-making by a select group of individuals, leading to potential inefficiencies, lack of transparency, and susceptibility to corruption. DAOs address these issues by decentralizing control and enabling community participation. A Sui-based DAO benefits from the following values:
 
-* **Transparency:** Decisions, transactions, and rules within a DAO can be  recorded onchain, providing an immutable and transparent record of activities. Transparency builds trust among members and ensures accountability.
-* **Democracy:** DAOs operate on a principle of collective decision-making, where each member typically has a say in the governance process. This democratic approach ensures that the interests of the entire community can be considered, rather than those of a centralized leadership.
-* **Efficiency:** By automating processes through smart contracts, DAOs can execute decisions and manage resources more efficiently. Automation reduces the need for intermediaries and minimizes human error.
-* **Inclusion:** DAOs provide opportunities for individuals from diverse backgrounds and geographies to participate in governance and decision-making. This inclusivity fosters a more diverse and representative community.
+* Transparency: Decisions, transactions, and rules within a DAO can be  recorded onchain, providing an immutable and transparent record of activities. Transparency builds trust among members and ensures accountability.
+* Democracy: DAOs operate on a principle of collective decision-making, where each member typically has a say in the governance process. This democratic approach ensures that the interests of the entire community can be considered, rather than those of a centralized leadership.
+* Efficiency: By automating processes through smart contracts, DAOs can execute decisions and manage resources more efficiently. Automation reduces the need for intermediaries and minimizes human error.
+* Inclusion: DAOs provide opportunities for individuals from diverse backgrounds and geographies to participate in governance and decision-making. This inclusivity fosters a more diverse and representative community.
 
 ## How DAOs work on Sui
 

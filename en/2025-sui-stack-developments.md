@@ -8,7 +8,7 @@
 
 ## Overview
 
-While there were a number of major launches in 2025, the defining theme of the year was the assembly of a complete, decentralized development stack: **the Sui Stack**. 
+While there were a number of major launches in 2025, the defining theme of the year was the assembly of a complete, decentralized development stack: the Sui Stack. 
 
 With the mainnet launch of Walrus (decentralized storage), Seal (onchain access control), and Nautilus (offchain data and computation) — alongside continued improvements to Sui itself — the Sui Stack moved from a set of ideas into a usable, end-to-end system. 
 

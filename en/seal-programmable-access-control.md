@@ -10,11 +10,11 @@ Most access systems weren’t built for how products actually work. Traditional 
 
 To fill that gap, teams often bolt on Role-Based Access Control ([RBAC](https://en.wikipedia.org/wiki/Role-based_access_control?ref=blog.sui.io)) or Attribute-Based Access Control ([ABAC](https://en.wikipedia.org/wiki/Attribute-based_access_control?ref=blog.sui.io)) layers using third-party products or custom layers, which makes the architecture more complex and fragile.
 
-[**Seal**](https://seal.mystenlabs.com/?ref=blog.sui.io) **takes a different approach**: it makes encryption the gate and policy the key. Data stays encrypted by default and only decrypts when a programmable access policy explicitly allows it. Because rules live with the data itself, you can express app-level rules cleanly, including different rules for different parts of the same app, without stitching together multiple external systems.
+[Seal](https://seal.mystenlabs.com/?ref=blog.sui.io) takes a different approach: it makes encryption the gate and policy the key. Data stays encrypted by default and only decrypts when a programmable access policy explicitly allows it. Because rules live with the data itself, you can express app-level rules cleanly, including different rules for different parts of the same app, without stitching together multiple external systems.
 
 ## Why programmable access beats bolt-on IAM
 
-Cloud IAM solves infrastructure questions like “can this principal identity call this endpoint?” Most products, however, need business-level rules: who may open this object, under these conditions, at this moment. With Seal, you write that logic as policy code that travels with the data. The ciphertext can move across services, clouds, or storage backends, yet it only decrypts when the policy approves, **enabling selective disclosure by default**.
+Cloud IAM solves infrastructure questions like “can this principal identity call this endpoint?” Most products, however, need business-level rules: who may open this object, under these conditions, at this moment. With Seal, you write that logic as policy code that travels with the data. The ciphertext can move across services, clouds, or storage backends, yet it only decrypts when the policy approves, enabling selective disclosure by default.
 
 This model reduces sprawl. Instead of duplicating roles, scopes, and permission lists across gateways, microservices, and databases, you encode the rule once at the data boundary. Because the policy state is anchored on [Sui](https://sui.io/?ref=blog.sui.io) and with optional storage of access logs on [Walrus](https://walrus.xyz/?ref=blog.sui.io), you get a durable, auditable trail that’s clearer than scattered server logs. The result is simpler operations, fewer places where secrets can leak, and policies that map directly to features, including subscriptions, embargoes, licensing terms, rather than to network or API plumbing.
 
@@ -22,28 +22,28 @@ This model reduces sprawl. Instead of duplicating roles, scopes, and permission 
 
 Seal ships with [reusable patterns](https://seal-docs.wal.app/ExamplePatterns/?ref=blog.sui.io) you can mix and match inside one product. The following examples illustrate how you could encode these rules in Sui smart contracts:
 
-* **Allowlist or membership** - Share encrypted content with a defined group of users or AI agents. 
-  * Sui policy example: “Members of Gold tier can open documents tagged \*gold/\*\*.”
-* **Time-locked access** - Coordinate reveals for asset drops or auctions. 
+* Allowlist or membership - Share encrypted content with a defined group of users or AI agents. 
+  * Sui policy example: “Members of Gold tier can open documents tagged gold/.”
+* Time-locked access - Coordinate reveals for asset drops or auctions. 
   * Sui policy example: “Decrypt after *2025-11-01T00:00Z* unless a legal hold is active.”
-* **Subscriptions & licensing** - Time-bound, paid access to premium content or API results.
+* Subscriptions & licensing - Time-bound, paid access to premium content or API results.
   * Sui policy example: “Active subscription AND region = EU AND license scope includes *model.infer*.”
-* **Owner-private data** - Portable encrypted objects that only the current owner can open.
+* Owner-private data - Portable encrypted objects that only the current owner can open.
   * Sui policy example: “Only the current NFT holder can decrypt attached perks.”
-* **Secure voting or tallies** – Keep ballots encrypted until conditions are met, then produce a verifiable tally on-chain. 
+* Secure voting or tallies – Keep ballots encrypted until conditions are met, then produce a verifiable tally on-chain. 
   * Sui policy example: “Decrypt results when quorum ≥ 60% and voting window is closed.”
-* **Pre-signed-style windows** - Time-limited, bearer-style access to specific Walrus blobs.
+* Pre-signed-style windows - Time-limited, bearer-style access to specific Walrus blobs.
   * Sui policy example: “Allow decryption for this blob until *link.expiry*.”
 
 ### Real-world examples
 
 These policy patterns can be used across a wide range of verticals:
 
-* **Enterprise data rooms** - “If counterparty has signed NDA AND deal phase ≥ *DD,* unlock the dataset at \*/dataroom/acme/\*\*; Regulators see audit logs only.”
-* **AI & data licensing** - “If client holds *dataset.read* for SKU X, allow inference with model Y from 09:00-17:00 UTC; Deny export of raw training data.”
-* **Media & creator platforms** - “Subscribers can stream videos for 30 days; Non-subscribers can decrypt 30-sec previews.”
-* **Digital marketing** - “Campaign analysts can decrypt aggregated cohort metrics by default; Individual-level data stays sealed unless a valid user-consent token is present and is unexpired.”
-* **Fintech** - “Auditor role decrypts redacted data for reported cases during review window; PII fields stay hidden until risk mgmt approval is attached.”
+* Enterprise data rooms - “If counterparty has signed NDA AND deal phase ≥ *DD,* unlock the dataset at /dataroom/acme/; Regulators see audit logs only.”
+* AI & data licensing - “If client holds *dataset.read* for SKU X, allow inference with model Y from 09:00-17:00 UTC; Deny export of raw training data.”
+* Media & creator platforms - “Subscribers can stream videos for 30 days; Non-subscribers can decrypt 30-sec previews.”
+* Digital marketing - “Campaign analysts can decrypt aggregated cohort metrics by default; Individual-level data stays sealed unless a valid user-consent token is present and is unexpired.”
+* Fintech - “Auditor role decrypts redacted data for reported cases during review window; PII fields stay hidden until risk mgmt approval is attached.”
 
 You can apply different policies to different features in the same app, like membership-gated content, time-locked previews, and per-user private notes, all without a tangle of ad-hoc access control lists.
 

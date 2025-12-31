@@ -44,11 +44,11 @@ By making licensing programmable rather than contractual, builders can finally o
 
 ## What builders can create
 
-Content licensing platforms can go in many directions, depending on the community or industry it serves. Some builders may focus on **AI-ready media libraries**, where designers, writers, or game asset creators upload their work, attach usage terms, and allow AI developers or agents to license it for training or agentic workflows. Walrus anchors provenance, Seal grants time-bound or per-seat access, and Sui logs every authenticated retrieval.
+Content licensing platforms can go in many directions, depending on the community or industry it serves. Some builders may focus on AI-ready media libraries, where designers, writers, or game asset creators upload their work, attach usage terms, and allow AI developers or agents to license it for training or agentic workflows. Walrus anchors provenance, Seal grants time-bound or per-seat access, and Sui logs every authenticated retrieval.
 
-Others may build **dataset or embedding exchanges** for specific problem domains, such ase-commerce analytics, mobility data, product catalogs, or creative design. Developers pay to access curated datasets or fine-tuning components, while agents acting on their behalf retrieve decryption keys and generate verifiable usage receipts.
+Others may build dataset or embedding exchanges for specific problem domains, such ase-commerce analytics, mobility data, product catalogs, or creative design. Developers pay to access curated datasets or fine-tuning components, while agents acting on their behalf retrieve decryption keys and generate verifiable usage receipts.
 
-Another direction is **agent-to-service licensing**, where autonomous agents perform tasks on behalf of users and temporarily license premium knowledge sources, APIs, or proprietary reference sets. Policies ensure the agent accesses only what it is authorized to, and every action is logged as proof.
+Another direction is agent-to-service licensing, where autonomous agents perform tasks on behalf of users and temporarily license premium knowledge sources, APIs, or proprietary reference sets. Policies ensure the agent accesses only what it is authorized to, and every action is logged as proof.
 
 In each case, the builder operates the business layer, including pricing, discovery, UX, and curation, while the Sui Stack handles verification, rights enforcement, and fair value exchange under the hood.
 

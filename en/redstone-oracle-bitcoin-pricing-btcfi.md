@@ -12,9 +12,9 @@ With this integration, RedStone will provide Sui users and builders with real-ti
 
 Here’s how the RedStone integration will benefit both builders and users:
 
-* **Reliable BTC pricing onchain:** RedStone’s Oracle ensures Bitcoin assets on Sui have accurate, up-to-the-second price feeds, improving accuracy and reducing risks for DeFi protocols and their users.
-* **More ways to earn yield:** With liquid and accurate BTC price data, platforms like Scallop, Navi, and Suilend can offer enhanced Bitcoin-based lending, borrowing, and staking products.
-* **Deeper liquidity and more efficient markets:** RedStone’s integration enhances BTCfi on Sui by delivering liquid, real-time price feeds for Bitcoin assets, improving collateral efficiency for lending protocols, reducing trading slippage, and enabling more accurate liquidations.
+* Reliable BTC pricing onchain: RedStone’s Oracle ensures Bitcoin assets on Sui have accurate, up-to-the-second price feeds, improving accuracy and reducing risks for DeFi protocols and their users.
+* More ways to earn yield: With liquid and accurate BTC price data, platforms like Scallop, Navi, and Suilend can offer enhanced Bitcoin-based lending, borrowing, and staking products.
+* Deeper liquidity and more efficient markets: RedStone’s integration enhances BTCfi on Sui by delivering liquid, real-time price feeds for Bitcoin assets, improving collateral efficiency for lending protocols, reducing trading slippage, and enabling more accurate liquidations.
 
 Bitcoin has long been the most widely held digital asset, yet its practical financial utility has remained largely untapped. The rise of BTCfi – bringing Bitcoin into DeFi – has enabled new ways for BTC holders to use their assets. 
 

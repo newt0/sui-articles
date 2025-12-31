@@ -4,7 +4,7 @@
 
 [Mysticeti](https://sui.io/mysticeti?ref=blog.sui.io) is the consensus protocol that powers Sui. First launched on mainnet in July 2024, it introduced a new generation of high-performance consensus built on [Directed Acyclic Graphs (DAGs)](https://blog.sui.io/all-about-directed-acyclic-graphs/). This design allowed Sui to achieve industry-leading responsiveness, low latency, and scalability.
 
-**With Mysticeti v2, we are taking the next major step forward.** 
+With Mysticeti v2, we are taking the next major step forward. 
 
 This version integrates transaction validation directly into the consensus process, removing redundant steps that previously added compute cost and latency. It also introduces a more efficient client mechanism called Transaction Driver, which simplifies how transactions are submitted and confirmed on the network. 
 
@@ -40,7 +40,7 @@ A transaction can only execute with votes from more than two-thirds of validator
 
 This mechanism also supports the “fastpath” on Sui, where transactions that touch only owned objects can be finalized faster without requiring consensus. The downside, however, is that this pre-consensus step adds significant compute cost for the validation of each transaction and increases latency for non-fastpath transactions as well.
 
-We have been working on merging this step into Mysticeti and eliminating all of its associated costs. The [Mysticeti paper](https://docs.sui.io/paper/mysticeti.pdf?ref=blog.sui.io) introduced the **Mysticeti-FPC** protocol, which removed the extra compute cost. After Mysticeti v1 launched, we focused on eliminating the latency overhead as well. This work culminates in **Mysticeti v2**, which realizes the full performance promise of Mysticeti and supports all capabilities needed by the Sui network.
+We have been working on merging this step into Mysticeti and eliminating all of its associated costs. The [Mysticeti paper](https://docs.sui.io/paper/mysticeti.pdf?ref=blog.sui.io) introduced the Mysticeti-FPC protocol, which removed the extra compute cost. After Mysticeti v1 launched, we focused on eliminating the latency overhead as well. This work culminates in Mysticeti v2, which realizes the full performance promise of Mysticeti and supports all capabilities needed by the Sui network.
 
 ## How Mysticeti v2 works
 
@@ -62,31 +62,31 @@ Another way to finalize a transaction is similar to indirect commit—when a cer
 
 However, a naive implementation of the Mysticeti v2 algorithm would not scale to processing 500,000 transactions. Having validators cast explicit votes on every transaction would amplify network traffic and reduce overall throughput. Evaluating whether each transaction has a quorum of certificates would also be computationally expensive, and block propagation across the network can be uneven.
 
-We optimized the Mysticeti v2 algorithm to address these challenges. Validators now cast explicit votes **only** for rejections. Accept votes are implicit through ancestor block links. Transaction certifications are evaluated only when necessary. The protocol also allows multiple rounds to vote and certify a transaction, ensuring that valid transactions can still be finalized even if submitted via a validator with a weak network connection.
+We optimized the Mysticeti v2 algorithm to address these challenges. Validators now cast explicit votes only for rejections. Accept votes are implicit through ancestor block links. Transaction certifications are evaluated only when necessary. The protocol also allows multiple rounds to vote and certify a transaction, ensuring that valid transactions can still be finalized even if submitted via a validator with a weak network connection.
 
 ## Transaction Driver: A more efficient transaction client
 
 With Mysticeti v2, transaction submission to a validator becomes less complicated and more efficient.
 
-**Quorum Driver** was the original mechanism for submitting transactions to Mysticeti v1. It worked by broadcasting every transaction to all validators for certification, collecting BLS signatures on each transaction’s validity. After signature aggregation, it re-broadcasted the certified transaction for consensus submission and gathered execution results from all validators again.
+Quorum Driver was the original mechanism for submitting transactions to Mysticeti v1. It worked by broadcasting every transaction to all validators for certification, collecting BLS signatures on each transaction’s validity. After signature aggregation, it re-broadcasted the certified transaction for consensus submission and gathered execution results from all validators again.
 
 While this design was necessary for the original, consensus-less fastpath, it came with a high CPU cost—at least two-thirds of validators (by stake) had to sign every transaction—and heavy bandwidth usage, as each transaction was broadcast twice.
 
-**Transaction Driver** solves these issues while preserving fast finality. It leverages the new transaction certification path introduced by Mysticeti v2 to achieve the same goals with far less overhead.
+Transaction Driver solves these issues while preserving fast finality. It leverages the new transaction certification path introduced by Mysticeti v2 to achieve the same goals with far less overhead.
 
 Key improvements include:
 
-1. **Minimal validator signatures**: Validators now sign transaction validity as part of consensus block signing, batching multiple transactions together rather than signing each individually. This dramatically reduces CPU load.
-2. **Single-path submission**: The client now submits each transaction to a single chosen validator instead of all validators, retrieving one complete copy of the effects. This reduces network usage to near-optimal levels.
-3. **Smart validator selection**: The driver automatically selects validators based on historical end-to-end latency for faster confirmations.
-4. **Graceful retries and resilience**: If the selected validator is slow or offline, the client automatically retries with others, targeting at least one-third of validators by stake. Errors are classified as retriable or non-retriable, maximizing the likelihood of successful completion before feedback is returned.
-5. **Bandwidth protection and DoS resistance**: Transaction Driver integrates with validator-side protections to prevent spam or bandwidth amplification attacks.
+1. Minimal validator signatures: Validators now sign transaction validity as part of consensus block signing, batching multiple transactions together rather than signing each individually. This dramatically reduces CPU load.
+2. Single-path submission: The client now submits each transaction to a single chosen validator instead of all validators, retrieving one complete copy of the effects. This reduces network usage to near-optimal levels.
+3. Smart validator selection: The driver automatically selects validators based on historical end-to-end latency for faster confirmations.
+4. Graceful retries and resilience: If the selected validator is slow or offline, the client automatically retries with others, targeting at least one-third of validators by stake. Errors are classified as retriable or non-retriable, maximizing the likelihood of successful completion before feedback is returned.
+5. Bandwidth protection and DoS resistance: Transaction Driver integrates with validator-side protections to prevent spam or bandwidth amplification attacks.
 
 Transaction Driver achieves this by sending a transaction to a selected validator, receiving its position in consensus, and then using the transaction digest and consensus position to retrieve and certify its full effects with a quorum of validators.
 
 ## Rollout
 
-Transaction Driver has been enabled for all traffic on full nodes operated by Mysten Labs and several partner teams. We observed a **35% latency reduction** on Asia-based full nodes (from ~1.00s to ~0.65s) and a **25% reduction** on Europe-based full nodes (from ~0.55s to ~0.40s).
+Transaction Driver has been enabled for all traffic on full nodes operated by Mysten Labs and several partner teams. We observed a 35% latency reduction on Asia-based full nodes (from ~1.00s to ~0.65s) and a 25% reduction on Europe-based full nodes (from ~0.55s to ~0.40s).
 
 ![](https://blog.sui.io/content/images/2025/11/data-src-image-1deaed49-063b-48f6-b9db-2f6a8db04bca.png)
 
@@ -96,16 +96,16 @@ Latency comparison on Asia-based full nodes showing improved performance with Tr
 
 Latency comparison on Europe-based full nodes showing improved performance with Transaction Driver (yellow) versus Quorum Driver (green).
 
-Starting with **Sui node v1.60**, Mysticeti v2 and Transaction Driver will become the default for transaction processing.
+Starting with Sui node v1.60, Mysticeti v2 and Transaction Driver will become the default for transaction processing.
 
 ## Additional changes
 
 Several other improvements introduced as part of Mysticeti v2 were rolled out earlier and will be covered in future blog posts, including:
 
-* **Garbage collection:** Old consensus blocks are dropped instead of being committed, limiting the performance impact of validators that fail to propagate their blocks efficiently.
-* **Smart ancestor selection:** Validators that do not broadcast blocks consistently are excluded as ancestors for linking.
+* Garbage collection: Old consensus blocks are dropped instead of being committed, limiting the performance impact of validators that fail to propagate their blocks efficiently.
+* Smart ancestor selection: Validators that do not broadcast blocks consistently are excluded as ancestors for linking.
 
-## **Future Work**
+## Future Work
 
 The work to improve Sui consensus is ongoing. 
 

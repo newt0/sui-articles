@@ -1,4 +1,4 @@
-Sui  のブログ記事の英文を、日本語に自然かつ正確に翻訳するためのプロンプトです。以下の要件に厳密に従ってください。
+Sui Foundation Blog の記事を、日本語に自然かつ正確に翻訳するためのプロンプトです。以下の要件に厳密に従ってください。
 
 # 翻訳要件
 
@@ -11,10 +11,10 @@ Sui  のブログ記事の英文を、日本語に自然かつ正確に翻訳す
 
 * コードブロックは翻訳をスキップする。例えば、
 
-```lua
-𝖧𝖺𝗇𝖽𝗅𝖾𝗋𝗌.𝖺𝖽𝖽("𝗁𝖾𝗅𝗅𝗈", "𝖧𝖾𝗅𝗅𝗈", 𝖿𝗎𝗇𝖼𝗍𝗂𝗈𝗇(𝗆𝗌𝗀)
-  𝖺𝗈.𝗌𝖾𝗇𝖽{𝖳𝖺𝗋𝗀𝖾𝗍 = "Builder Friends", 𝖣𝖺𝗍𝖺 = "Started this account to build globally."}
-𝖾𝗇𝖽)
+```move
+public entry fun transfer_object(obj: Object, recipient: address, ctx: &mut TxContext) {
+    transfer::public_transfer(obj, recipient);
+}
 ```
 
 ## 翻訳品質
@@ -27,41 +27,58 @@ Sui  のブログ記事の英文を、日本語に自然かつ正確に翻訳す
 
 ### 翻訳せず英語のまま記載する用語
 
-#### Arweave 関連
+#### Sui ネットワーク・プロトコル関連
 
-* Arweave Network, Permaweb, Blockweave, SmartWeave, SPoRA, RandomX, Kryder Rate, Storage Endowment, GraphQL, Gateway(s), PSCs, ANS-104, Endowment, Seeding, Gateway Address Registry, Serverless Functions, Lazy Evaluation, Verifiable Computing
+* Sui, Sui Network, Sui Blockchain, Mainnet, Testnet, Devnet, Narwhal, Bullshark, Mysticeti, Consensus Engine, Epoch, Gas, Transaction Effects Digest, Checkpoint, Validator, Full Node, Light Client
 
-#### AO 関連
+#### Move 言語・オブジェクトモデル関連
 
-* AO, AO Computer/Network, Single System Image, Messenger Unit (MU), Scheduler Unit (SU), Compute Unit (CU), AO Protocol, AOS, AOCRED, WASM, Handlers, Inbox, Message, Process, Spawn, Cron, DataItem, Cast, Holographic State, Module, Tags, Outbox, Actor Model
+* Move, Move VM, Move Bytecode, Move Compiler, Object, Object ID, Shared Object, Owned Object, Immutable Object, Dynamic Field, Hot Potato, Capability, Witness Pattern, One-Time Witness, Programmable Transaction Block (PTB), Transaction Block, Transfer, Freeze, Share, Package, Module, Struct, Entry Function, Public Function
+
+#### Sui 固有機能
+
+* zkLogin, Sui Kiosk, SuiNS, Sui Bridge, DeepBook, Walrus, Sponsored Transaction, Gas Station, GraphQL, RPC, Object Display, Dynamic Fields, Event, Sui Move Analyzer
 
 #### トークン・経済用語
 
-* AO Token, AR Token, Bridge/Pre-bridge, Staking, Mining/Miners, Permissionless Ecosystem Funding, PEDG
+* SUI Token, Staking, Delegation, Validator, Storage Fund, Storage Rebate, Gas Price, Reference Gas Price, Computation Cost, Storage Cost
 
 #### 一般的なブロックチェーン用語
 
-* Proof of Stake, Sovereign, Subgraph, Hooks, Upgradeability, Claim, Receipt Token, Vault, Voting Power, Gauge, Mempool, Single-Slot Finality, Optimistic, Rollup, Blob, Blobspace, Time to finality, Tx
+* Proof of Stake, DPoS (Delegated Proof of Stake), Sovereign, Hooks, Upgradeability, Mint, Burn, Vault, Voting Power, Governance, Mempool, Finality, Optimistic, Rollup, Zero-Knowledge Proof, Layer 1, Layer 2, Cross-Chain, Bridge, Oracle, dApp, DeFi, NFT, Smart Contract, Wallet, Account Abstraction, Multisig
 
 ### カタカナ表記に置き換える用語
 
 * state → ステート
-* transaction → トランザクション
-* Wallet → ウォレット
-* Upgradable contracts → アップグレーダブルコントラクト
-* burn → バーン
+* transaction → トランザクション（文脈により「取引」も可）
+* gas → ガス
+* epoch → エポック
+* node → ノード
+* validator → バリデータ（文脈により「検証者」も可）
+* package → パッケージ
+* module → モジュール
 * products → プロダクト
 * consumer → コンシューマー
-* consumer crypto → コンシューマークリプト
 * treasury → トレジャリー
-* light clients → ライトクライアント
+* client → クライアント
+* network → ネットワーク
+* throughput → スループット
+* latency → レイテンシ
 
 ### 指定された訳語を使用する用語
 
-* emit → 発行
-* random number → 乱数
-* flywheel effect → フライホイール効果
-* trust minimised → トラスト最小化された
+* emit → 発行（イベント発行の文脈）
+* mint → 発行（トークン・NFT発行の文脈）
+* burn → 焼却、バーン
+* stake → ステーキング、預託
+* delegate → 委任
+* consensus → コンセンサス、合意形成
+* finality → ファイナリティ、確定性
+* ownership → 所有権
+* reference → 参照
+* immutable → 不変
+* mutable → 可変
+* trust minimized → トラスト最小化された
 
 ### その他の用語
 
@@ -70,9 +87,10 @@ Sui  のブログ記事の英文を、日本語に自然かつ正確に翻訳す
 
 ## 文体と読者想定
 
-* 想定読者：ブロックチェーン技術に関心のある開発者・技術者
-* 文体：専門的かつ読みやすく親しみやすい日本語
+* 想定読者：Sui や Move 言語、ブロックチェーン技術に関心のある開発者・技術者・研究者
+* 文体：専門的かつ読みやすく親しみやすい日本語（「です・ます」調を基本とする）
 * 技術概念については、必要に応じて簡潔な補足を加える
+* Sui や Move 特有の概念（Objectモデル、Programmable Transaction Blockなど）は、初出時に簡単な説明を加えることが望ましい
 
 ## 翻訳前の確認と文脈理解
 

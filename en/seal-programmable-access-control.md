@@ -1,131 +1,68 @@
 [Seal: Programmable Access Control for Real-World Apps](https://blog.sui.io/seal-programmable-access-control/)
 
-## MEV on Sui: Current State and Next Steps
+## Seal: Programmable Access Control for Real-World Apps
 
-How MEV works on Sui—mechanisms for transaction ordering, protection, and fair competition.
+Seal lets products enforce access where it matters most: at the data boundary.
 
-* [![Mysten Labs](https://blog.sui.io/content/images/size/w100/2023/11/MystenLabs_Logomark_Red-4.png)](https://blog.sui.io/author/mysten/)
+* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
 
-![MEV on Sui: Current State and Next Steps](https://blog.sui.io/content/images/size/w2000/2025/02/02-49-Blog-Header.png)
+![Seal: Programmable Access Control for Real-World Apps](https://blog.sui.io/content/images/size/w2000/2025/11/3_Blog-Header_Seal-Access-Control--1-.png)
 
-Maximum extractable value (MEV) has become a big topic in the blockchain industry, as it deals with transaction ordering and arbitrage opportunities. In the interest of ensuring transparency, protecting transactions, maintaining a healthy network, and rewarding participants, we have been thoughtfully implementing Sui improvement proposals (SIPs) and other mechanisms to guide MEV on Sui. 
+Most access systems weren’t built for how products actually work. Traditional Web2 Cloud Identity and Access Managements (IAM) tools are designed around infrastructure, controlling who can call which API, instead of focusing on products and users where access depends on data, context, and timing. 
 
-Along with current mechanisms, we plan on building more to ensure our high-level principles guide the evolution of MEV on Sui.
+To fill that gap, teams often bolt on Role-Based Access Control ([RBAC](https://en.wikipedia.org/wiki/Role-based_access_control?ref=blog.sui.io)) or Attribute-Based Access Control ([ABAC](https://en.wikipedia.org/wiki/Attribute-based_access_control?ref=blog.sui.io)) layers using third-party products or custom layers, which makes the architecture more complex and fragile.
 
-## Design principles and considerations
+[**Seal**](https://seal.mystenlabs.com/?ref=blog.sui.io) **takes a different approach**: it makes encryption the gate and policy the key. Data stays encrypted by default and only decrypts when a programmable access policy explicitly allows it. Because rules live with the data itself, you can express app-level rules cleanly, including different rules for different parts of the same app, without stitching together multiple external systems.
 
-Every trade on Sui introduces new information with potential profit opportunities. The MEV ecosystem on Sui is shaped via several mechanisms:
+## Why programmable access beats bolt-on IAM
 
-1. Mechanisms for **submitting MEV transactions**.
-2. Mechanisms for **disseminating MEV opportunities**.
-3. Mechanisms for **distributing MEV revenue**.
-4. Mechanisms for **protecting user transactions.**
+Cloud IAM solves infrastructure questions like “can this principal identity call this endpoint?” Most products, however, need business-level rules: who may open this object, under these conditions, at this moment. With Seal, you write that logic as policy code that travels with the data. The ciphertext can move across services, clouds, or storage backends, yet it only decrypts when the policy approves, **enabling selective disclosure by default**.
 
-Our general priorities are as follows:
+This model reduces sprawl. Instead of duplicating roles, scopes, and permission lists across gateways, microservices, and databases, you encode the rule once at the data boundary. Because the policy state is anchored on [Sui](https://sui.io/?ref=blog.sui.io) and with optional storage of access logs on [Walrus](https://walrus.xyz/?ref=blog.sui.io), you get a durable, auditable trail that’s clearer than scattered server logs. The result is simpler operations, fewer places where secrets can leak, and policies that map directly to features, including subscriptions, embargoes, licensing terms, rather than to network or API plumbing.
 
-1. User **transaction protection** is more important than the amount of extracted value. Prioritize smaller slippage over larger extracted value. Avoid out-of-protocol auctions that increase latency with no way to opt out.
-2. **Network transparency** is preferable over offline deals with validators or relayers.
-3. Prioritize competition via **priority gas auctions (PGAs)** and discourage spamming behaviors leading to system inefficiencies: a perfect system we’re striving for makes the dominant strategy for a searcher to send a transaction with a priority fee determined by the extracted value.
-4. Encourage **rewards distribution** to ecosystem-aligned participants: the validators, stakers, apps, and users.
+## Policies you can actually use
 
-## Transaction submission
+Seal ships with [reusable patterns](https://seal-docs.wal.app/ExamplePatterns/?ref=blog.sui.io) you can mix and match inside one product. The following examples illustrate how you could encode these rules in Sui smart contracts:
 
-Since transactions that modify the same object are executed sequentially, clients compete to increase the chances of their execution order. From a system’s perspective, **priority gas auctions (PGAs)** are an efficient way to allocate resources and prevent spam while redistributing gas fees across participants.
+* **Allowlist or membership** - Share encrypted content with a defined group of users or AI agents. 
+  * Sui policy example: “Members of Gold tier can open documents tagged \*gold/\*\*.”
+* **Time-locked access** - Coordinate reveals for asset drops or auctions. 
+  * Sui policy example: “Decrypt after *2025-11-01T00:00Z* unless a legal hold is active.”
+* **Subscriptions & licensing** - Time-bound, paid access to premium content or API results.
+  * Sui policy example: “Active subscription AND region = EU AND license scope includes *model.infer*.”
+* **Owner-private data** - Portable encrypted objects that only the current owner can open.
+  * Sui policy example: “Only the current NFT holder can decrypt attached perks.”
+* **Secure voting or tallies** – Keep ballots encrypted until conditions are met, then produce a verifiable tally on-chain. 
+  * Sui policy example: “Decrypt results when quorum ≥ 60% and voting window is closed.”
+* **Pre-signed-style windows** - Time-limited, bearer-style access to specific Walrus blobs.
+  * Sui policy example: “Allow decryption for this blob until *link.expiry*.”
 
-The key driver of priority gas auctions is **quantized execution**:
+### Real-world examples
 
-* Transactions that are ordered by consensus are processed in blocks. Traders compete for priority orders both **within** and **across** commits via gas auctions.
-* This contrasts with CEX market makers, where execution priority depends purely on speed, achieved through low-latency networking and algorithms.
-* A higher consensus commit rate **reduces quantization effects**, making DEX execution more efficient but narrowing the PGA window.
-* Currently, PGAs of the non-congested objects matter for the fastest searchers only. With a **15 commits/sec** Sui rate, a 70 millisecond advantage in transaction submission speed is a deal breaker.
-  * Congested objects might defer transaction execution, which amplifies the importance of PGAs, since the window of the competing transactions is growing to potentially 10 times that of a regular consensus commit. 
+These policy patterns can be used across a wide range of verticals:
 
-There are two separate mechanisms for steering transactions towards specific upcoming Sui commits:
+* **Enterprise data rooms** - “If counterparty has signed NDA AND deal phase ≥ *DD,* unlock the dataset at \*/dataroom/acme/\*\*; Regulators see audit logs only.”
+* **AI & data licensing** - “If client holds *dataset.read* for SKU X, allow inference with model Y from 09:00-17:00 UTC; Deny export of raw training data.”
+* **Media & creator platforms** - “Subscribers can stream videos for 30 days; Non-subscribers can decrypt 30-sec previews.”
+* **Digital marketing** - “Campaign analysts can decrypt aggregated cohort metrics by default; Individual-level data stays sealed unless a valid user-consent token is present and is unexpired.”
+* **Fintech** - “Auditor role decrypts redacted data for reported cases during review window; PII fields stay hidden until risk mgmt approval is attached.”
 
-### Submitting a batch of transactions within a soft bundle: [SIP-19](https://github.com/sui-foundation/sips/blob/main/sips/sip-19.md?ref=blog.sui.io)
+You can apply different policies to different features in the same app, like membership-gated content, time-locked previews, and per-user private notes, all without a tangle of ad-hoc access control lists.
 
-1. Transactions submitted via a soft bundle are included in the same consensus commit with a high probability for valid bundles. Bundle validity conditions require, among others, identical gas prices for all its transactions.
-2. In practice, this mechanism enables offchain auctions for bundling the original transaction with its back-run transactions, e.g., the one run by [Shio](https://www.getshio.com/explorer?ref=blog.sui.io).
+## Why this is simpler than traditional IAM
 
-### Prioritizing transaction via consensus amplification: [SIP-45](https://github.com/sui-foundation/sips/blob/main/sips/sip-45.md?ref=blog.sui.io)
+Most teams start with cloud IAM for APIs, integrate with an identity provider, optionally add a third-party system for RBAC, and then roll their own rule engine to reflect product logic. Each layer speaks a different language (roles, scopes, conditions), and none is attached to the data itself. You end up duplicating rules, leaking secrets between microservices, and relying on logs to prove who could access what.
 
-1. SIP-45 is tackling the problem of potential jitters in consensus submission, where a transaction with a higher gas price is ordered in a later commit than one with a lower gas price submitted at the same time.
-2. There are two natural jitter sources in consensus submission:
-   1. A submitting validator is behind by a couple of consensus rounds: a transaction that is submitted by another validator might get ordered first.
-   2. A validator who is a leader of the consensus round has a one-round advantage over any other validator submission.
-3. SIP-45 amplifies consensus submission for the gas prices that are higher than k x RGP (k is a system parameter that is set to 5 in the current configuration, and RGP is reference gas price). A transaction with a gas price of n x RGP is amplified n times.
-4. The **broader adoption of SIP-45** by both the app builders and the users creates a more efficient system with fair competition.
-   1. It’s important to note that SIP-45 doesn’t change the fundamental system properties from the client perspective: **it disincentivizes spamming** by providing a more efficient alternative.
+With Seal, the enforcement point is the data boundary. Data is encrypted until a policy says otherwise; policies are code you control and audit; and approvals can be recorded on Walrus. You stop scattering authorization across gateways, services, and storage systems. Instead of maintaining three overlapping control planes, you encode business rules once, next to your product logic, and let encryption do the heavy lifting. That reduces moving parts, shrinks the blast radius of mistakes, and gives stakeholders a clear rule: “if the policy didn’t approve, the data never decrypted.”
 
-### Choosing the right gas price for a transaction
+## How it works in practice
 
-There are two major factors a client should consider to determine the gas price of a submitted transaction:
+At a high level, you encrypt data with Seal so plaintext isn’t exposed by default, and then capture your business rules as a small, auditable policy program. Decryption requires threshold approval from independent key servers (and, soon, multi-party computation committees) that evaluate the policy, and only on success does a client or permitted backend receive the keys to decrypt the data.
 
-1. **Priority gas auction.**
-   * Within the consensus commit, transactions modifying the same object are **ordered by their gas price**, which creates fair competition across the searchers.
-2. **Consensus submission amplification.**
-   * As described above, the gas price over 5 x RGP **amplifies consensus submission** with n validators submitting the given transaction to consensus. Any gas price increase beyond the amplification threshold is reducing the probability of low-performer submission jitters. In practice, an amplification factor of 5 is enough for eliminating jittering, while the gas price of 100 x RGP unlocks the next round’s leader submission with high probability.
-3. **Avoiding congestion deferrals and cancellations.**
-   * Sui limits the wall clock time of checkpoint execution via controlling the rate of transactions modifying the same shared object. Transactions modifying a congested object are ordered according to their gas price, with the lower-priced transactions being deferred and ultimately canceled in order to limit the longest chain of sequential execution per checkpoint, a mechanism called [**object-based local fee markets**](https://docs.sui.io/guides/developer/advanced/local-fee-markets?ref=blog.sui.io). *(Note that while gas prices might surge for shared objects providing high arbitrage opportunities, they remain unchanged for the rest of the system.)*
-   * Full Nodes keep track of the gas prices of both the executed and the cancelled transactions mutating congested objects. The **results of a transaction dry-run** can therefore include both the lowest-priced-executed and the highest-priced-cancelled transaction gas prices for the congested objects modified by a given request. With this information, a client can determine the gas price required to avoid the deferral with high probability. *(Note, this work is just partially implemented and is going to be part of SDK within the next two months.)*
+Developers can implement this quickly using the SDK and easy-to-adapt Sui-based policy patterns, using Seal in new apps along with Walrus and optionally [Nautilus](https://sui.io/nautilus?ref=blog.sui.io), or fitting in existing architectures and replacing scattered authorization glue with concise, verifiable policy code.
 
-## Disseminating transaction information
+## Try it out
 
-Each transaction on Sui introduces information with potential profit opportunities. Consider a happy-path lifecycle of a shared object transaction since the moment it’s submitted by the client until its effects are observed by a third party:
+Pick one sensitive flow, that includes premium content, dataset, or message attachment, and protect it with Seal behind a simple policy (membership or time lock is a good first step). Store the ciphertext where you already keep content, like Walrus. As you gain confidence, extend the approach to subscriptions, licensing, and per-feature rules, applying different policies to different parts of the product in an incremental fashion. Take a look at the [getting started guide](https://seal-docs.wal.app/GettingStarted/?ref=blog.sui.io).
 
-![](https://blog.sui.io/content/images/2025/02/mermaid-diagram-2025-02-25-130957--1-.png)
-
-1. A client submits a transaction to an RPC full node (typically chosen by the app).
-2. RPC node broadcasts a transaction to the validators, which verify its validity and sign it, RPC node assembles transaction certificate from the quorum.
-3. RPC node broadcasts transaction certificates to the validators.
-4. A deterministically chosen validator submits the transaction to consensus. Mysticeti consensus is broadcasting the blocks between the validators, and in 3 consensus rounds, the block with the given transaction is committed.
-   1. The transaction is executed on each validator
-5. The transaction effects certificate is sent back to the RPC node and the client.
-6. Within 1 to 3 consensus rounds each validator forms and signs a checkpoint (checkpoints are batching several consensus commits).
-7. Checkpoint signatures are broadcasted between the validators and each validator forms a checkpoint certificate.
-8. A state-sync protocol is responsible for disseminating certified checkpoints in a p2p fashion. Typically each validator has a direct peer that is not serving RPC requests: a state-sync full node, which receives their checkpoint first.
-9. A third-party full node that is connected to the state-sync full node learns about the checkpoint and downloads its content. At this moment we assume a third party that is directly connected to the full node can post-process the effects of this transaction and react accordingly.
-
-### Disseminating transaction information before validator submission
-
-As described in the previous section, there are Sui offchain auctions for submitting soft bundles following [SIP-19](https://github.com/sui-foundation/sips/blob/main/sips/sip-19.md?ref=blog.sui.io). These auctions intercept transaction submission via **offchain agreements between the apps and the auction system**, e.g., the one run by [Shio](https://www.getshio.com/explorer?ref=blog.sui.io).
-
-This type of information dissemination assumes a well-behaved auction system that protects user transactions from potential sandwich attacks. Shio is incentivized to protect user transactions to maintain their business and therefore employs a number of auction techniques (bait transactions, random delays) to hurt the financial profitability of potential sandwich bots.
-
-Obviously, this type of information dissemination happens outside of Sui (between the apps and the auction), is opt-in for the apps and the users, provides speculative information only, with no guarantee that the original user transaction is going to succeed.
-
-### Streaming consensus blocks
-
-In order to democratize low-delay access to the user transactions we’re designing a system for direct streaming of consensus blocks. At a high level, full nodes are going to have an option to directly subscribe to consensus blocks.
-
-This way, full nodes will have an option to speculatively notify about the transactions that are to be committed with high probability. The network topology is using a standard open state-sync peer discovery protocol.
-
-The speculative notification has the potential to significantly shortcut the propagation delay about the transaction to just about 160 milliseconds (2 consensus rounds) since validator submission.
-
-The consensus block streaming project is currently in the design phase and we’re expecting to have a SIP within the next 1 to 2 months.
-
-## Protecting user transactions
-
-User transactions need to be protected against predatory front-running, sandwiching, and involuntary submission delays.
-
-### External quorum driving
-
-Sui transaction submission requires external quorum driving, which is typically executed by the full nodes.
-
-![](https://blog.sui.io/content/images/2025/02/image.png)
-
-In case a validator that receives a transaction submission request for transaction t wants to initiate a new transaction t', it is going to be behind the original quorum driver in the certificate assembly process. Unless the submitting full node is poorly connected to the Sui quorum, a validator that starts quorum driving t' in response to the original transaction, will assemble its certificate after t.
-
-Furthermore, since t’s consensus submission is decentralized, it cannot be reliably postponed once its certificate reaches the quorum. Hence, if t's certificate reaches Sui quorum before the certificate of t', t is going to be settled before t' with high probability.
-
-Therefore, the very fact of external quorum driving provides a natural front-running protection, assuming trust in the full node responsible for the transaction submission (since front-running predatory attempts are easily detected onchain, these attempts would be noted by the clients and hurt the RPC operator reputation).
-
-### Mysticeti fast path
-
-We’re currently working on a project that changes transaction submission to the fast path protocol described in the Mysticeti [paper](https://arxiv.org/abs/2310.14821?ref=blog.sui.io). According to this protocol, a user transaction can be submitted to a single validator, which would leverage Mysticeti for gathering and executing transaction certificates. While making the system significantly more efficient, it opens up front-running opportunities for the validator to receive the user transaction.
-
-This risk is purely hypothetical since we don’t have any evidence of front-running attempts on Sui today. In a new setup, the possibility of a front-run is higher, but on the other hand, given deterministic knowledge about the submitting validator, it makes it easier to hold them accountable.
-
-## Sui’s evolving MEV landscape
-
-Sui’s MEV landscape is still taking shape, with new mechanisms coming later this year. While priority gas auctions and consensus amplification define the current system, upcoming innovations like time-lock encryption and Mysticeti’s fast path will reshape transaction execution and security. As these pieces come online, MEV on Sui will continue to evolve, creating a more dynamic and transparent ecosystem.
+Seal puts business-level access where it belongs, at the data, so you can build products that are private by default, easy to reason about, and ready for real-world obligations.

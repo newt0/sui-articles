@@ -1,131 +1,101 @@
 [Inside the BTCfi & Payments Fellowship on Sui](https://blog.sui.io/btcfi-payments-fellowship-on-sui/)
 
-## MEV on Sui: Current State and Next Steps
+## Main Takeaways
 
-How MEV works on Sui—mechanisms for transaction ordering, protection, and fair competition.
+* *A four-week fellowship from* [*Sui*](https://sui.io/?ref=blog.sui.io)*,* [*Walrus*](https://www.walrus.xyz/?ref=blog.sui.io)*, and* [*Press Start*](https://x.com/PressStartCap?ref=blog.sui.io) *fast-tracked founders building the next wave of BTCfi and payment products.*
+* *Seven early teams joined and spent the month refining their products through hands-on workshops, peer reviews, and mentorship.*
+* *The cohort showed why teams in this space are choosing Sui: performance that supports fast, simple and scalable payment experiences.*
 
-* [![Mysten Labs](https://blog.sui.io/content/images/size/w100/2023/11/MystenLabs_Logomark_Red-4.png)](https://blog.sui.io/author/mysten/)
+## Overview
 
-![MEV on Sui: Current State and Next Steps](https://blog.sui.io/content/images/size/w2000/2025/02/02-49-Blog-Header.png)
+BTCfi and crypto payments are moving fast: stablecoins move billions daily, remittances are becoming instant, and AI agents are beginning to transact for us.
 
-Maximum extractable value (MEV) has become a big topic in the blockchain industry, as it deals with transaction ordering and arbitrage opportunities. In the interest of ensuring transparency, protecting transactions, maintaining a healthy network, and rewarding participants, we have been thoughtfully implementing Sui improvement proposals (SIPs) and other mechanisms to guide MEV on Sui. 
+To help founders building this next generation of financial rails, the Sui Foundation, Walrus, and Press Start Capital ran a four-week **BTCfi & Payments Fellowship**.
 
-Along with current mechanisms, we plan on building more to ensure our high-level principles guide the evolution of MEV on Sui.
+Here’s what happened inside the fellowship: the projects, the progress, and the key lessons from the first cohort.
 
-## Design principles and considerations
+## Why Sui Backed This Fellowship
 
-Every trade on Sui introduces new information with potential profit opportunities. The MEV ecosystem on Sui is shaped via several mechanisms:
+Sui’s ability to process large volumes of transactions quickly make it ideal for builders working on payments, BTCfi and agentic systems. To support early teams exploring these use cases, the Sui Foundation partnered with Walrus and Press Start Capital to create a focused, hands-on fellowship for founders at the earliest stage.
 
-1. Mechanisms for **submitting MEV transactions**.
-2. Mechanisms for **disseminating MEV opportunities**.
-3. Mechanisms for **distributing MEV revenue**.
-4. Mechanisms for **protecting user transactions.**
+[Press Start](https://pressstart.capital/?ref=blog.sui.io)
 
-Our general priorities are as follows:
+writes first checks for Web3 founders and runs pre-accelerator fellowships built around a community of builders learning alongside one another. Since 2022, their alumni have gone on to raise, or join top accelerators, such as Alliance DAO, a16z Crypto Startup Accelerator, a16z Speedrun, Binance Labs, Colosseum, and Y Combinator.
 
-1. User **transaction protection** is more important than the amount of extracted value. Prioritize smaller slippage over larger extracted value. Avoid out-of-protocol auctions that increase latency with no way to opt out.
-2. **Network transparency** is preferable over offline deals with validators or relayers.
-3. Prioritize competition via **priority gas auctions (PGAs)** and discourage spamming behaviors leading to system inefficiencies: a perfect system we’re striving for makes the dominant strategy for a searcher to send a transaction with a priority fee determined by the extracted value.
-4. Encourage **rewards distribution** to ecosystem-aligned participants: the validators, stakers, apps, and users.
+The mission is simple: provide hands-on support and back early teams.
 
-## Transaction submission
+As Christian Thompson, Managing Director at the Sui Foundation, notes, “Combining the mentorship of Press Start with advisors from Sui and Walrus creates a powerful blend of entrepreneurial and technical firepower for the next generation of innovators.”
 
-Since transactions that modify the same object are executed sequentially, clients compete to increase the chances of their execution order. From a system’s perspective, **priority gas auctions (PGAs)** are an efficient way to allocate resources and prevent spam while redistributing gas fees across participants.
+## What the Fellowship Offered
 
-The key driver of priority gas auctions is **quantized execution**:
+The BTCfi and Payments Fellowship was designed as a short, high-intensity program. Across four weeks, teams joined roughly three sessions a week covering customer development, product–market fit, go-to-market, token design and fundraising. 
 
-* Transactions that are ordered by consensus are processed in blocks. Traders compete for priority orders both **within** and **across** commits via gas auctions.
-* This contrasts with CEX market makers, where execution priority depends purely on speed, achieved through low-latency networking and algorithms.
-* A higher consensus commit rate **reduces quantization effects**, making DEX execution more efficient but narrowing the PGA window.
-* Currently, PGAs of the non-congested objects matter for the fastest searchers only. With a **15 commits/sec** Sui rate, a 70 millisecond advantage in transaction submission speed is a deal breaker.
-  * Congested objects might defer transaction execution, which amplifies the importance of PGAs, since the window of the competing transactions is growing to potentially 10 times that of a regular consensus commit. 
+Sessions were led by builders who had already shipped, investors with real experience and technical specialists from Sui and Walrus. Workshops were practical and interactive, including AMAs, founder stories and hands-on exercises.
 
-There are two separate mechanisms for steering transactions towards specific upcoming Sui commits:
+Founders also learned from one another through weekly ‘Show & Tells’, peer feedback and direct network-building. Each team received a $25,000 investment from the Sui Foundation, with the opportunity for follow-on investment from Press Start.
 
-### Submitting a batch of transactions within a soft bundle: [SIP-19](https://github.com/sui-foundation/sips/blob/main/sips/sip-19.md?ref=blog.sui.io)
+## Meet the Cohort
 
-1. Transactions submitted via a soft bundle are included in the same consensus commit with a high probability for valid bundles. Bundle validity conditions require, among others, identical gas prices for all its transactions.
-2. In practice, this mechanism enables offchain auctions for bundling the original transaction with its back-run transactions, e.g., the one run by [Shio](https://www.getshio.com/explorer?ref=blog.sui.io).
+Seven teams joined the Fellowship, which ran from October to November 2025, with each building a different part of the future of payments and Bitcoin-native finance. Below, we introduce each project, explain the problem they’re solving, and share what they took away from the four-week program.
 
-### Prioritizing transaction via consensus amplification: [SIP-45](https://github.com/sui-foundation/sips/blob/main/sips/sip-45.md?ref=blog.sui.io)
+### **Blend** 
 
-1. SIP-45 is tackling the problem of potential jitters in consensus submission, where a transaction with a higher gas price is ordered in a later commit than one with a lower gas price submitted at the same time.
-2. There are two natural jitter sources in consensus submission:
-   1. A submitting validator is behind by a couple of consensus rounds: a transaction that is submitted by another validator might get ordered first.
-   2. A validator who is a leader of the consensus round has a one-round advantage over any other validator submission.
-3. SIP-45 amplifies consensus submission for the gas prices that are higher than k x RGP (k is a system parameter that is set to 5 in the current configuration, and RGP is reference gas price). A transaction with a gas price of n x RGP is amplified n times.
-4. The **broader adoption of SIP-45** by both the app builders and the users creates a more efficient system with fair competition.
-   1. It’s important to note that SIP-45 doesn’t change the fundamental system properties from the client perspective: **it disincentivizes spamming** by providing a more efficient alternative.
+[Blend](https://app.blend.money/?ref=blog.sui.io) is building the next evolution of DeFi savings. Earlier versions of DeFi focused on simple lending or permissionless markets. Blend introduces an adaptive, quant-layer-driven layer that tracks market conditions and automatically adjusts strategies as liquidity shifts. 
 
-### Choosing the right gas price for a transaction
+The result is a more resilient and automated way for users to earn on their assets without constantly managing positions. Blend powers its own simple, one-click savings product, and it also provides an underlying strategy engine that other teams can integrate.
 
-There are two major factors a client should consider to determine the gas price of a submitted transaction:
+“The fellowship sped everything up. Weeks of direct feedback and real founder advice replaced months of slow, isolated guessing,” said [**Manny**](http://www.x.com/mannyornothing?ref=blog.sui.io)**, Co-Founder of** [**Blend**](http://www.x.com/blend_money?ref=blog.sui.io)**.**
 
-1. **Priority gas auction.**
-   * Within the consensus commit, transactions modifying the same object are **ordered by their gas price**, which creates fair competition across the searchers.
-2. **Consensus submission amplification.**
-   * As described above, the gas price over 5 x RGP **amplifies consensus submission** with n validators submitting the given transaction to consensus. Any gas price increase beyond the amplification threshold is reducing the probability of low-performer submission jitters. In practice, an amplification factor of 5 is enough for eliminating jittering, while the gas price of 100 x RGP unlocks the next round’s leader submission with high probability.
-3. **Avoiding congestion deferrals and cancellations.**
-   * Sui limits the wall clock time of checkpoint execution via controlling the rate of transactions modifying the same shared object. Transactions modifying a congested object are ordered according to their gas price, with the lower-priced transactions being deferred and ultimately canceled in order to limit the longest chain of sequential execution per checkpoint, a mechanism called [**object-based local fee markets**](https://docs.sui.io/guides/developer/advanced/local-fee-markets?ref=blog.sui.io). *(Note that while gas prices might surge for shared objects providing high arbitrage opportunities, they remain unchanged for the rest of the system.)*
-   * Full Nodes keep track of the gas prices of both the executed and the cancelled transactions mutating congested objects. The **results of a transaction dry-run** can therefore include both the lowest-priced-executed and the highest-priced-cancelled transaction gas prices for the congested objects modified by a given request. With this information, a client can determine the gas price required to avoid the deferral with high probability. *(Note, this work is just partially implemented and is going to be part of SDK within the next two months.)*
+### **Encrypto** 
 
-## Disseminating transaction information
+[Encrypto](https://www.encrypto.fun/?ref=blog.sui.io) turns your self-custodial wallets into a bank. Today, DeFi and traditional financial rails are disconnected. Encrypto fixes this by linking everyday rails like IBAN, ACH, wires, and routing numbers directly to your wallets, while adding crypto-native features such as spending liquid tokens via card, and a savings account that earns DeFi yield.
 
-Each transaction on Sui introduces information with potential profit opportunities. Consider a happy-path lifecycle of a shared object transaction since the moment it’s submitted by the client until its effects are observed by a third party:
+“Sui and Press Start curated really valuable speaker sessions and panels that gave insight into the early stages of starting a company that are usually only gleaned through first-hand experience, allowing us to really refine our product strategy and vision,” said [**Brandon Sanchez**](https://x.com/brandon0nchain?ref=blog.sui.io) **and Alexis Soto, Co-Founders of Encrypto.**
 
-![](https://blog.sui.io/content/images/2025/02/mermaid-diagram-2025-02-25-130957--1-.png)
+### **Intuipay** 
 
-1. A client submits a transaction to an RPC full node (typically chosen by the app).
-2. RPC node broadcasts a transaction to the validators, which verify its validity and sign it, RPC node assembles transaction certificate from the quorum.
-3. RPC node broadcasts transaction certificates to the validators.
-4. A deterministically chosen validator submits the transaction to consensus. Mysticeti consensus is broadcasting the blocks between the validators, and in 3 consensus rounds, the block with the given transaction is committed.
-   1. The transaction is executed on each validator
-5. The transaction effects certificate is sent back to the RPC node and the client.
-6. Within 1 to 3 consensus rounds each validator forms and signs a checkpoint (checkpoints are batching several consensus commits).
-7. Checkpoint signatures are broadcasted between the validators and each validator forms a checkpoint certificate.
-8. A state-sync protocol is responsible for disseminating certified checkpoints in a p2p fashion. Typically each validator has a direct peer that is not serving RPC requests: a state-sync full node, which receives their checkpoint first.
-9. A third-party full node that is connected to the state-sync full node learns about the checkpoint and downloads its content. At this moment we assume a third party that is directly connected to the full node can post-process the effects of this transaction and react accordingly.
+[Intuipay](https://x.com/intuipay?ref=blog.sui.io) helps students and researchers fund education and open science without needing to understand blockchain. Its first product is a crypto-invisible crowdfunding marketplace that connects backers with credible research projects, offering faster, cheaper and more transparent access to funding, and opening participation in science.
 
-### Disseminating transaction information before validator submission
+“Both the Sui and Press Start teams were very prompt and helpful in providing feedback and offering introductions,” said [**Harry Zhang**](https://x.com/harryzhangs?ref=blog.sui.io)**, Co-Founder of Intuipay**. “I would recommend this fellowship to any post-idea, pre-accelerator stage founders.”
 
-As described in the previous section, there are Sui offchain auctions for submitting soft bundles following [SIP-19](https://github.com/sui-foundation/sips/blob/main/sips/sip-19.md?ref=blog.sui.io). These auctions intercept transaction submission via **offchain agreements between the apps and the auction system**, e.g., the one run by [Shio](https://www.getshio.com/explorer?ref=blog.sui.io).
+### **PIVY** 
 
-This type of information dissemination assumes a well-behaved auction system that protects user transactions from potential sandwich attacks. Shio is incentivized to protect user transactions to maintain their business and therefore employs a number of auction techniques (bait transactions, random delays) to hurt the financial profitability of potential sandwich bots.
+[PIVY](https://x.com/pivyme?ref=blog.sui.io) fixes one of crypto’s biggest user experience gaps: sharing a wallet address exposes your entire financial history. With PIVY, users simply share a payment link or username to receive funds privately, without revealing balances or past transactions. Sign in with Google or X, claim a username and start receiving payments in under a minute.
 
-Obviously, this type of information dissemination happens outside of Sui (between the apps and the auction), is opt-in for the apps and the users, provides speculative information only, with no guarantee that the original user transaction is going to succeed.
+“We loved how it wasn’t just speaker sessions. We got practical templates and real insight into how VCs think. The fundraising session in particular was eye-opening,” said [**Febi Mettasari**](https://x.com/febimettasari?ref=blog.sui.io)**, Co-Founder of PIVY**.
 
-### Streaming consensus blocks
+### **Silo** 
 
-In order to democratize low-delay access to the user transactions we’re designing a system for direct streaming of consensus blocks. At a high level, full nodes are going to have an option to directly subscribe to consensus blocks.
+[Silo](https://x.com/paysilo?ref=blog.sui.io) makes crypto payments feel as easy as sending a message. Users simply pay someone’s @handle, and Silo handles everything in the background — delivering funds across chains with privacy by default. It removes the complexity of bridges, addresses and chain selection, turning crypto payments into just payments.
 
-This way, full nodes will have an option to speculatively notify about the transactions that are to be committed with high probability. The network topology is using a standard open state-sync peer discovery protocol.
+“The fellowship was like a fast-forward button. In a few weeks, we got more practical feedback, founder-to-founder advice, and honest conversations than months of building in isolation,” said Silo's founder.
 
-The speculative notification has the potential to significantly shortcut the propagation delay about the transaction to just about 160 milliseconds (2 consensus rounds) since validator submission.
+### **Surgepay** 
 
-The consensus block streaming project is currently in the design phase and we’re expecting to have a SIP within the next 1 to 2 months.
+[Surgepay](https://www.surgepay.xyz/?ref=blog.sui.io) makes sending money back home as easy as using Venmo. Transfers arrive instantly with zero fees, giving underserved communities a faster, cheaper alternative to traditional remittance services. No waiting days, no hidden costs, no friction. Behind the scenes, Surgepay handles settlement, conversion, compliance and liquidity through remittance-specific infrastructure so the user experience stays simple.
 
-## Protecting user transactions
+“The speaker sessions helped us set a clear foundation for our goals, and the weekly check-ins were invaluable in sharpening our positioning,” said [**Deepansh Singh**](https://x.com/deepansh_see?ref=blog.sui.io)**, Founder of Surgepay**, reflecting on the program’s practical impact.
 
-User transactions need to be protected against predatory front-running, sandwiching, and involuntary submission delays.
+### **WAP3** 
 
-### External quorum driving
+WAP3 lets AI agents pay each other automatically and safely, but with instant verification and transparent, on-chain records. Today, agents can reason, communicate and trade information, but they lack a native way to handle money. WAP3 aims to fill that gap with a unified pipeline for intent, verification, programmable settlement and auditability.
 
-Sui transaction submission requires external quorum driving, which is typically executed by the full nodes.
+“The most rewarding part of the fellowship was the close collaboration with the Sui and Walrus engineering teams, which deepened my understanding of on-chain verification and payment infrastructure,” said [**Nelson Jing**](https://t.me/nelsonjingusc?ref=blog.sui.io)**, Founder of WAP3**. “Engaging with other Fellows was both inspiring and energizing, providing valuable perspectives.”
 
-![](https://blog.sui.io/content/images/2025/02/image.png)
+## What This Cohort Shows
 
-In case a validator that receives a transaction submission request for transaction t wants to initiate a new transaction t', it is going to be behind the original quorum driver in the certificate assembly process. Unless the submitting full node is poorly connected to the Sui quorum, a validator that starts quorum driving t' in response to the original transaction, will assemble its certificate after t.
+This cohort highlights how quickly BTCfi and payments are maturing, and how wide the design space has become. Rather than speculative experiments, these teams are building for real users and real problems: instant and affordable remittances, private-by-default payments, adaptive savings tools, and agentic settlement layers.
 
-Furthermore, since t’s consensus submission is decentralized, it cannot be reliably postponed once its certificate reaches the quorum. Hence, if t's certificate reaches Sui quorum before the certificate of t', t is going to be settled before t' with high probability.
+Across the cohort, a few themes stood out. 
 
-Therefore, the very fact of external quorum driving provides a natural front-running protection, assuming trust in the full node responsible for the transaction submission (since front-running predatory attempts are easily detected onchain, these attempts would be noted by the clients and hurt the RPC operator reputation).
+Builders are prioritising user experience over protocol complexity. They’re designing systems that abstract away chains, addresses and liquidity management. And they’re leaning into infrastructure like Sui that can support high-volume, low-latency activity — a requirement for payments and agentic systems that need to operate reliably at scale.
 
-### Mysticeti fast path
+## Stay Connected and Register Your Interest
 
-We’re currently working on a project that changes transaction submission to the fast path protocol described in the Mysticeti [paper](https://arxiv.org/abs/2310.14821?ref=blog.sui.io). According to this protocol, a user transaction can be submitted to a single validator, which would leverage Mysticeti for gathering and executing transaction certificates. While making the system significantly more efficient, it opens up front-running opportunities for the validator to receive the user transaction.
+The BTCfi and Payments Fellowship brought together early-stage founders, technical mentors from Sui and Walrus and hands-on support from Press Start, creating four weeks of fast learning and real progress. As this cohort wraps, the focus now shifts to supporting the next wave of builders.
 
-This risk is purely hypothetical since we don’t have any evidence of front-running attempts on Sui today. In a new setup, the possibility of a front-run is higher, but on the other hand, given deterministic knowledge about the submitting validator, it makes it easier to hold them accountable.
+If you would like to be notified about future founder programmes or ecosystem opportunities, please register your interest using the form below. This helps us reach the right teams early and ensures you receive updates as soon as any new initiatives go live.
 
-## Sui’s evolving MEV landscape
+We’re excited to see what the next generation of founders builds on Sui.
 
-Sui’s MEV landscape is still taking shape, with new mechanisms coming later this year. While priority gas auctions and consensus amplification define the current system, upcoming innovations like time-lock encryption and Mysticeti’s fast path will reshape transaction execution and security. As these pieces come online, MEV on Sui will continue to evolve, creating a more dynamic and transparent ecosystem.
+**Register your interest in future fellowships** [**here**](https://suifoundation.notion.site/2ae37af41c6e80dda47ff25eec87f54e?ref=blog.sui.io)**.**

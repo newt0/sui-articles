@@ -40,109 +40,13 @@ When sBTC appears on Sui, it does so as part of a cross-ecosystem collaboration 
 
 Each of these assets brings Bitcoin onto Sui through a different lens, shaped by unique custody models, trust assumptions, and integration paths. Here’s a snapshot of how they compare:
 
-|
-Asset
-
-|
-
-Origin
-
-|
-
-Custody Model
-
-|
-
-Key Feature
-
-|  |
-|  |
-
-|
-
-wBTC
-
-|
-
-Sui Bridge
-
-|
-
-Custodial (relies on custody of the wBTC contract on Ethereum)
-
-|
-
-Native Ethereum wBTC bridged to Sui
-
-|
-|
-
-LBTC
-
-|
-
-Lombard
-
-|
-
-Multisig (evolving to decentralized vaults)
-
-|
-
-Liquid staked BTC that earns protocol rewards via Babylon
-
-|
-|
-
-xBTC
-
-|
-
-OKX
-
-|
-
-Custodial (exchange-held)
-
-|
-
-Exchange-native minting and redemption
-
-|
-|
-
-tBTC
-
-|
-
-Threshold Network
-
-|
-
-Distributed threshold cryptography
-
-|
-
-Trustless custody with no single point of control
-
-|
-|
-
-sBTC
-
-|
-
-Stacks Protocol
-
-|
-
-Secured via Bitcoin Proof of Transfer
-
-|
-
-Smart contract functionality rooted in the Bitcoin network
-
-|
+| ASSET | ORIGIN            | CUSTODY MODEL                                                   | KEY FEATURE                                                     |
+|------:|-------------------|-----------------------------------------------------------------|-----------------------------------------------------------------|
+| wBTC  | Sui Bridge        | Custodial (relies on custody of the wBTC contract on Ethereum) | Native Ethereum wBTC bridged to Sui                             |
+| LBTC  | Lombard           | Multisig (evolving to decentralized vaults)                    | Liquid staked BTC that earns protocol rewards via Babylon      |
+| xBTC  | OKX               | Custodial (exchange-held)                                      | Exchange-native minting and redemption                          |
+| tBTC  | Threshold Network | Distributed threshold cryptography                             | Trustless custody with no single point of control               |
+| sBTC  | Stacks Protocol   | Secured via Bitcoin Proof of Transfer                           | Smart contract functionality rooted in the Bitcoin network      |
 
 ## BTC comes alive on Sui
 

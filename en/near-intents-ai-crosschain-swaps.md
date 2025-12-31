@@ -4,8 +4,6 @@
 
 New integration enables fast, intent-driven asset swaps into Sui’s soaring DeFi ecosystem, with full interoperability and no bridges or friction.
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![NEAR Intents Brings Lightning-Fast Cross-chain Swaps to Sui](https://blog.sui.io/content/images/size/w2000/2025/07/NEAR-Intents.png)
 
 Today, Sui, a leading layer-one built for mass adoption is pleased to announce [NEAR](https://www.near.org/?ref=blog.sui.io) has added support for the Sui blockchain on [NEAR Intents](https://www.near.org/intents?ref=blog.sui.io), a product built on the NEAR blockchain, enabling Sui users to seamlessly interact across 20 chains and more than 80 assets with speed and simplicity. The integration enables users to instantly swap assets from other chains — including NEAR, BTC, ETH, SOL, XRP, DOGE, ZEC,  and more —directly into Sui, without the need for bridges or intermediary tools. 

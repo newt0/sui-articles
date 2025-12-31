@@ -4,8 +4,6 @@
 
 As AI agents consume more of the web, shared licensing protocols built on the Sui Stack offer a new way to handle content rights and value exchange
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![Data with Rights: Designing Content Licensing for AI  with the Sui Stack](https://blog.sui.io/content/images/size/w2000/2025/12/Blog_1205_Verifiable-AI-Licensing-On-The-Sui-Stack.png)
 
 ## Main Takeaways

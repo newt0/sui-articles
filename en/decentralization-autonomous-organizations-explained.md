@@ -4,8 +4,6 @@
 
 DAOs leverage blockchain technology to create transparent, democratic, and self-governing entities that empower communities to collaboratively manage resources.
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![All About Decentralized Autonomous Organizations](https://blog.sui.io/content/images/size/w2000/2024/08/07-42-Blog-Header.png)
 
 Decentralized Autonomous Organizations (DAOs) represent a transformative approach to governance and organizational management, utilizing blockchain technology to create transparent, democratic, and self-governing entities. By automating decision-making processes and reducing reliance on traditional hierarchical structures, DAOs empower a wide range of community groups, from open source software and charitable organizations to neighborhood associations, to collaboratively manage resources, projects, and initiatives.

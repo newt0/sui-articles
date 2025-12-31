@@ -4,8 +4,6 @@
 
 RedStone’s next-gen oracles enhance Bitcoin’s usability on Sui, ensuring accurate, onchain price integrity for DeFi applications.
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![Sui’s Bitcoin DeFi Ecosystem Expands as RedStone Brings Bitcoin Utility Onchain](https://blog.sui.io/content/images/size/w2000/2025/02/Redstone.png)
 
 [RedStone](https://www.redstone.finance/?ref=blog.sui.io), a leading cross-chain data oracle providing pricing data for smart contracts and DeFi protocols, is now live on Sui. Trusted by over 140 DeFi protocols, RedStone ensures pricing integrity and accelerates the adoption of Bitcoin-backed DeFi, further strengthening Sui's BTCfi ecosystem. This expansion brings RedStone’s oracle solutions to one of the fastest-growing Layer 1 ecosystems. 

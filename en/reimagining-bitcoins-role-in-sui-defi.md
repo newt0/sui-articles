@@ -4,8 +4,6 @@
 
 Bitcoin’s untapped potential meets a chain built to support it — discover the vision of BTCfi on Sui.
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![Reimagining Bitcoin’s Role in Sui DeFi](https://blog.sui.io/content/images/size/w2000/2025/07/07---14-Blog-Header--1-.jpg)
 
 Bitcoin stands as the cornerstone of the digital asset market, widely recognized as a secure, decentralized store of value with a market capitalization exceeding $2 trillion. Institutional investors increasingly view it as a hedge against inflation and a durable alternative asset class. However, Bitcoin’s financial utility remains constrained, with over a trillion dollars in BTC sitting idle, generating no yield and offering little beyond speculative price appreciation.

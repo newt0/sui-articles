@@ -4,8 +4,6 @@
 
 Real World Assetsのトークン化は、従来の金融とDeFiの間のギャップを埋めるのに役立ちます。
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![All About Real World Assets](https://blog.sui.io/content/images/size/w2000/2024/08/07-41-Blog-Header.png)
 
 Real World Assets(RWA)のトークン化は、従来の物理資産がデジタルで管理・取引される方法を再構築しています。これらの資産をオンチェーン化し、DeFiエコシステムに統合することで、トークン化されたRWAは不動産、商品、美術品などの資産に対して、より高いアクセシビリティ、効率性、機能性を提供します。

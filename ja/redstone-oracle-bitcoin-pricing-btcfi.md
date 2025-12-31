@@ -4,8 +4,6 @@
 
 RedStoneの次世代Oracleは、SuiにおけるBitcoinの使いやすさを強化し、DeFiアプリケーションのための正確なオンチェーン価格の整合性を保証します。
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![Sui's Bitcoin DeFi Ecosystem Expands as RedStone Brings Bitcoin Utility Onchain](https://blog.sui.io/content/images/size/w2000/2025/02/Redstone.png)
 
 Smart ContractやDeFiプロトコルに価格データを提供する主要なクロスチェーンデータOracleである[RedStone](https://www.redstone.finance/?ref=blog.sui.io)が、Sui上で稼働を開始しました。140以上のDeFiプロトコルから信頼されているRedStoneは、価格の整合性を保証し、Bitcoin担保DeFiの採用を加速させ、SuiのBTCfiエコシステムをさらに強化します。この拡大により、RedStoneのOracleソリューションが最も急成長しているLayer 1エコシステムの1つにもたらされます。

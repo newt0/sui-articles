@@ -4,8 +4,6 @@
 
 AI agents are transforming Web3, and Sui is powering their next evolution.
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![All About AI Agents](https://blog.sui.io/content/images/size/w2000/2025/03/02-34-Blog-Header.jpg)
 
 AI agents are reshaping Web3 by bringing greater automation, intelligence, and adaptability to decentralized applications. These autonomous programs analyze data, interact with smart contracts, and execute tasks in real time, enabling more efficient asset management, enhanced security, and dynamic user experiences and interactions. As the space continues to evolve, AI agents are proving to be a key tool for optimizing onchain processes and expanding what’s possible in Web3.

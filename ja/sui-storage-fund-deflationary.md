@@ -4,8 +4,6 @@
 
 SuiのStorage Fundは、すべてのトランザクションを静かに持続可能性と希少性の力に変えます。
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![The Deflationary Nature of Sui's Storage Fund](https://blog.sui.io/content/images/size/w2000/2025/09/09-11-Blog-Header.jpg)
 
 SuiのStorage Fundは、ネットワーク設計の中核に位置し、すべてのトランザクションでSUIの供給を静かに形成しています。これは、オンチェーンデータを保存するための長期的なコストをカバーしながら、アクティブな流通からトークンを着実に[削除する](https://sui.io/deflation?ref=blog.sui.io)基盤となるメカニズムです。

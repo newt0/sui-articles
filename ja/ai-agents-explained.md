@@ -4,8 +4,6 @@
 
 AIエージェントがWeb3を変革し、Suiがその次の進化を支えています。
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![All About AI Agents](https://blog.sui.io/content/images/size/w2000/2025/03/02-34-Blog-Header.jpg)
 
 AIエージェントは、より高度な自動化、インテリジェンス、適応性を分散型アプリケーションにもたらすことで、Web3を再構築しています。これらの自律プログラムは、データを分析し、Smart Contractと対話し、リアルタイムでタスクを実行することで、より効率的な資産管理、強化されたセキュリティ、そしてダイナミックなユーザー体験とインタラクションを可能にします。この分野が進化を続ける中、AIエージェントはオンチェーンプロセスを最適化し、Web3で可能なことを拡大するための重要なツールであることが証明されています。

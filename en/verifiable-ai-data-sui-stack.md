@@ -4,8 +4,6 @@
 
 The future of AI isn’t just about smarter models; it’s about verifiable data, and the Sui Stack is building the trust layer that makes it possible.
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![Better AI Starts with Verifiable Data via The Sui Stack](https://blog.sui.io/content/images/size/w2000/2025/10/10-28-Blog-Header.png)
 
 AI adoption is moving fast, but its foundations haven’t caught up. 

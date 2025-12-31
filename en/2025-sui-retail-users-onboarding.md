@@ -4,8 +4,6 @@
 
 A year marked by simpler onboarding, more approachable DeFi, and practical ways to use Bitcoin across the Sui ecosystem
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![2025 in Review: Making Sui Easier for Users](https://blog.sui.io/content/images/size/w2000/2025/12/Blog_1218_Sui-2025-Built-for-Everyday-Users.png)
 
 ## Main Takeaways

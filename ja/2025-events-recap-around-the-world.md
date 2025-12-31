@@ -4,8 +4,6 @@
 
 Suiのグローバルイベントがどのように人々を結びつけ、エコシステムの成長を支援し、年間を通じて勢いを実際の進歩へと変えていったかを振り返ります
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![2025 in Review: Around the World With Sui](https://blog.sui.io/content/images/size/w2000/2025/12/Blog_1221_Sui-2025-Around-The-World-In-Person-1.png)
 
 ## 主なポイント

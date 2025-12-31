@@ -4,8 +4,6 @@
 
 Seal lets products enforce access where it matters most: at the data boundary.
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![Seal: Programmable Access Control for Real-World Apps](https://blog.sui.io/content/images/size/w2000/2025/11/3_Blog-Header_Seal-Access-Control--1-.png)
 
 Most access systems weren’t built for how products actually work. Traditional Web2 Cloud Identity and Access Managements (IAM) tools are designed around infrastructure, controlling who can call which API, instead of focusing on products and users where access depends on data, context, and timing. 

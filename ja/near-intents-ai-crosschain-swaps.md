@@ -4,8 +4,6 @@
 
 新しい統合により、Suiの急成長するDeFiエコシステムへの高速でインテント駆動型の資産スワップが可能になり、完全な相互運用性とBridgeや摩擦なしで実現されます。
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![NEAR Intents Brings Lightning-Fast Cross-chain Swaps to Sui](https://blog.sui.io/content/images/size/w2000/2025/07/NEAR-Intents.png)
 
 本日、大規模採用のために構築された主要なLayer 1であるSuiは、[NEAR](https://www.near.org/?ref=blog.sui.io)がNEARブロックチェーン上に構築されたプロダクトである[NEAR Intents](https://www.near.org/intents?ref=blog.sui.io)でSuiブロックチェーンのサポートを追加したことを発表できることを嬉しく思います。これにより、Suiユーザーは20のチェーンと80以上の資産を、スピードとシンプルさでシームレスにやり取りできるようになります。この統合により、ユーザーはNEAR、BTC、ETH、SOL、XRP、DOGE、ZECなどを含む他のチェーンから資産を、Bridgeや仲介ツールを必要とせずに、直接Suiに即座にスワップできます。

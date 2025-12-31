@@ -4,8 +4,6 @@
 
 AI の未来は、よりスマートなモデルだけではありません。検証可能なデータこそが鍵であり、Sui Stack はそれを可能にする信頼のレイヤーを構築しています。
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![Better AI Starts with Verifiable Data via The Sui Stack](https://blog.sui.io/content/images/size/w2000/2025/10/10-28-Blog-Header.png)
 
 AI の採用は急速に進んでいますが、その基盤はまだ追いついていません。

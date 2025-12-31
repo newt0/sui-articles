@@ -4,8 +4,6 @@
 
 AIエージェントが安全かつ検証可能な方法で支払いを行うために必要な信頼レイヤーをSuiがどのように提供しているかを見ていきます
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![When Agents Pay: The Trust Layer for Agentic Commerce](https://blog.sui.io/content/images/size/w2000/2025/12/Blog_1221_Safe-Payments-For-AI-Agents.png)
 
 ## 主なポイント

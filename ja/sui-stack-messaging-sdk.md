@@ -4,8 +4,6 @@
 
 新しいSui Stack Messaging SDKを使用して、プライベートでプログラマブルなコミュニケーションをアプリに直接組み込みます。
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![Sui Stack Messaging SDK: Programmable Communication for Web3](https://blog.sui.io/content/images/size/w2000/2025/09/07---01-Blog-Header--1-.png)
 
 [Sui Stack Messaging SDK](https://github.com/MystenLabs/sui-stack-messaging-sdk?ref=blog.sui.io)がアルファ版として利用可能になりました。この新しい開発者ツールキットは、安全でプログラマブルなコミュニケーションをSui上での構築のネイティブな部分にします。

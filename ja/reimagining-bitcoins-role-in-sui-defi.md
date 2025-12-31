@@ -4,8 +4,6 @@
 
 Bitcoinの未開拓の潜在能力が、それをサポートするために構築されたチェーンと出会う — Sui上のBTCfiのビジョンを発見してください。
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![Reimagining Bitcoin's Role in Sui DeFi](https://blog.sui.io/content/images/size/w2000/2025/07/07---14-Blog-Header--1-.jpg)
 
 Bitcoinはデジタル資産市場の基盤として立ち、2兆ドルを超える時価総額を持つ、安全で分散化された価値の保管手段として広く認識されています。機関投資家は、インフレに対するヘッジとして、また耐久性のある代替資産クラスとしてますます見なしています。しかし、Bitcoinの金融ユーティリティは制約されたままであり、1兆ドルを超えるBTCが遊休状態で、利回りを生まず、投機的な価格上昇以外にほとんど何も提供していません。

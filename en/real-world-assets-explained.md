@@ -4,8 +4,6 @@
 
 Tokenizing real world assets helps to bridge the gap between traditional finance and DeFi.
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![All About Real World Assets](https://blog.sui.io/content/images/size/w2000/2024/08/07-41-Blog-Header.png)
 
 The tokenization of Real World Assets (RWAs) is reshaping how traditional physical assets are managed and traded digitally. By bringing these assets onchain and integrating them into DeFi ecosystems, tokenized RWAs provide more accessibility, efficiency, and functionality for assets such as real estate, commodities, and fine art.

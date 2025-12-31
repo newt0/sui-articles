@@ -4,8 +4,6 @@
 
 With the launch of DeepBook version 3 and the introduction of the DEEP token, Sui’s DeFi ecosystem is primed for greater efficiency, liquidity, and community-driven governance.
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![The DEEP Token's Role in DeepBook Governance](https://blog.sui.io/content/images/size/w2000/2024/10/09-29-Blog-Header--1-.png)
 
 Today, [DeepBook](https://www.deepbook.tech/?ref=blog.sui.io) version 3 officially launched on Mainnet alongside the [DEEP token](https://www.deepbook.tech/deep-token?ref=blog.sui.io), marking a major milestone in its evolution. With this upgrade, users and market makers now benefit from finely tuned incentives that sets the stage for greater decentralization through community-driven governance.

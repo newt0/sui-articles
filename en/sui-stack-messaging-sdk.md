@@ -4,8 +4,6 @@
 
 Build private, programmable communication directly into your app with the new Sui Stack Messaging SDK.
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![Sui Stack Messaging SDK: Programmable Communication for Web3](https://blog.sui.io/content/images/size/w2000/2025/09/07---01-Blog-Header--1-.png)
 
 The [Sui Stack Messaging SDK](https://github.com/MystenLabs/sui-stack-messaging-sdk?ref=blog.sui.io) is now available in alpha. This new developer toolkit makes secure, programmable communication a native part of building on Sui. 

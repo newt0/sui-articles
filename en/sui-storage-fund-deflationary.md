@@ -4,8 +4,6 @@
 
 Sui’s storage fund quietly turns every transaction into a force for sustainability and scarcity.
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![The Deflationary Nature of Sui’s Storage Fund](https://blog.sui.io/content/images/size/w2000/2025/09/09-11-Blog-Header.jpg)
 
 Sui’s storage fund sits at the core of the network’s design, quietly shaping the supply of SUI with every transaction. It’s the underlying mechanism that steadily [removes tokens from active circulation](https://sui.io/deflation?ref=blog.sui.io) while covering the long-term cost of storing onchain data. 

@@ -1,4 +1,17 @@
-[SuiにおけるBTCfi & Payments Fellowshipの内幕](https://blog.sui.io/btcfi-payments-fellowship-on-sui/)
+---
+title: SuiにおけるBTCfi & Payments Fellowshipの内幕 [Sui Foundation Blog]
+tags: SUI Web3 Blockchain Bitcoin Walrus
+author: nft
+slide: false
+---
+Sui、Walrus、Press Startの支援を受け、7つの初期段階のチームが4週間かけて決済、BTCfi、エージェンティック製品の改良に取り組みました。彼らが構築しているものと、そこから得た学びをご紹介します。
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1926720/163adbf0-c8e8-4a5a-a2ff-97481d0f7cb4.png)
+
+:::note
+元記事: [Inside the BTCfi & Payments Fellowship on Sui](https://blog.sui.io/btcfi-payments-fellowship-on-sui/)
+:::
+
 
 ## 主なポイント
 

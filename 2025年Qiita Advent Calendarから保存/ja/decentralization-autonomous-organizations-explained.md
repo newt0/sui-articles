@@ -1,10 +1,16 @@
-[分散型自律組織のすべて](https://blog.sui.io/decentralization-autonomous-organizations-explained/)
-
-## 分散型自律組織のすべて
-
+---
+title: DAO(分散型自律組織)のすべて [Sui Foundation Blog]
+tags: SUI Web3 Blockchain DAO 仮想通貨
+author: nft
+slide: false
+---
 DAOは、ブロックチェーン技術を活用して、透明性があり、民主的で、自己統治する組織を作り、コミュニティがリソースを協力して管理できるようにします。
 
 ![All About Decentralized Autonomous Organizations](https://blog.sui.io/content/images/size/w2000/2024/08/07-42-Blog-Header.png)
+
+:::note
+元記事: [All About Decentralized Autonomous Organizations](https://blog.sui.io/decentralization-autonomous-organizations-explained/)
+:::
 
 Decentralized Autonomous Organizations（DAO）は、ブロックチェーン技術を活用して、透明性があり、民主的で、自己統治する組織を作り出す、ガバナンスと組織管理への変革的なアプローチを表しています。意思決定プロセスを自動化し、従来の階層構造への依存を減らすことで、DAOは、オープンソースソフトウェアや慈善団体から近隣組織に至るまで、幅広いコミュニティグループが、リソース、プロジェクト、イニシアチブを協力して管理できるようにします。
 

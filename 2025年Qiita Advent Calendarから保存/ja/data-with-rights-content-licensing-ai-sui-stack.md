@@ -1,10 +1,16 @@
-[権利を持つデータ:Sui StackでAI向けコンテンツライセンシングを設計する](https://blog.sui.io/data-with-rights-content-licensing-ai-sui-stack/)
-
-## 権利を持つデータ:Sui StackでAI向けコンテンツライセンシングを設計する
-
-AI AgentがWeb上のコンテンツをより多く消費するようになるにつれて、Sui Stack上に構築された共有ライセンシングプロトコルは、コンテンツの権利と価値交換を処理する新しい方法を提供します
+---
+title:  権利を持つデータ:Sui StackでAI向けコンテンツライセンシングを設計する [Sui Foundation Blog]
+tags: SUI Web3 Blockchain AI Walrus
+author: nft
+slide: false
+---
+AI AgentがWeb上のコンテンツをより多く消費するようになるにつれて、Sui Stack上に構築された共有ライセンシングプロトコルは、コンテンツの権利と価値交換を処理する新しい方法を提供します。
 
 ![Data with Rights: Designing Content Licensing for AI  with the Sui Stack](https://blog.sui.io/content/images/size/w2000/2025/12/Blog_1205_Verifiable-AI-Licensing-On-The-Sui-Stack.png)
+
+:::note
+元記事: [Data with Rights: Designing Content Licensing for AI with the Sui Stack](https://blog.sui.io/data-with-rights-content-licensing-ai-sui-stack/)
+:::
 
 ## 主なポイント
 

@@ -1,10 +1,11 @@
-[エージェントが支払うとき:エージェント型コマースのための信頼レイヤー](https://blog.sui.io/ai-agents-agentic-commerce-trust-layer/)
-
-## エージェントが支払うとき:エージェント型コマースのための信頼レイヤー
-
+#  エージェントが支払うとき:エージェント型コマースのための信頼レイヤー[Sui Foundation Blog]
 AI Agentが安全かつ検証可能な方法で支払いを行うために必要な信頼レイヤーをSuiがどのように提供しているかを見ていきます
 
 ![When Agents Pay: The Trust Layer for Agentic Commerce](https://blog.sui.io/content/images/size/w2000/2025/12/Blog_1221_Safe-Payments-For-AI-Agents.png)
+
+:::note
+元記事: [When Agents Pay: The Trust Layer for Agentic Commerce](https://blog.sui.io/ai-agents-agentic-commerce-trust-layer/)
+:::
 
 ## 主なポイント
 

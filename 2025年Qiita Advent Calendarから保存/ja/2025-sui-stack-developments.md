@@ -1,4 +1,12 @@
-[2025 in Review: How The Sui Stack Came Together](https://blog.sui.io/2025-sui-stack-developments/)
+# 2025年を振り返る：Suiスタックはいかにして構築されたか [Sui Foundation Blog]
+
+今年、Suiのコアとなる構成要素がどのように組み合わさって完全な分散型スタックを形成したのか、そしてそれがオンチェーンアプリケーションにとって何を意味するのかを発見してください。
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1926720/6a2de733-e73f-4b06-8a6e-076db058ada1.png)
+
+:::note
+元記事: [2025 in Review: How The Sui Stack Came Together](https://blog.sui.io/2025-sui-stack-developments/)
+:::
 
 ## 主なポイント
 
@@ -8,7 +16,7 @@
 
 ## 概要
 
-2025年には多くの主要なローンチがありましたが、この年を定義するテーマは、完全な分散型開発スタックの組み立てでした。それがSui Stackです。
+2025年には多くの主要なローンチがありましたが、この年を定義するテーマは、完全な分散型開発スタックの組み立てでした。それが**Sui Stack**です。
 
 Walrus(分散型ストレージ)、Seal(オンチェーンアクセス制御)、Nautilus(オフチェーンデータと計算)のMainnetローンチと、Sui自体の継続的な改善により、Sui Stackは一連のアイデアから使用可能なエンドツーエンドシステムへと移行しました。
 

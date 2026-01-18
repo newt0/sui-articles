@@ -1,10 +1,17 @@
-[2025 in Review: Around the World With Sui](https://blog.sui.io/2025-events-recap-around-the-world/)
-
-## 2025年を振り返って: Suiと共に世界を巡る旅
-
-Suiのグローバルイベントがどのように人々を結びつけ、エコシステムの成長を支援し、年間を通じて勢いを実際の進歩へと変えていったかを振り返ります
+---
+title:  2025年を振り返って: Suiと共に世界を巡る旅 [Sui Foundation Blog]
+tags: SUI Web3 Blockchain 仮想通貨 move
+author: nft
+slide: false
+---
+Suiのグローバルイベントがどのように人々を結びつけ、エコシステムの成長を支援し、年間を通じて勢いを実際の進歩へと変えていったかを振り返ります。
 
 ![2025 in Review: Around the World With Sui](https://blog.sui.io/content/images/size/w2000/2025/12/Blog_1221_Sui-2025-Around-The-World-In-Person-1.png)
+
+:::note
+元記事: [2025 in Review: Around the World With Sui](https://blog.sui.io/2025-events-recap-around-the-world/)
+:::
+
 
 ## 主なポイント
 

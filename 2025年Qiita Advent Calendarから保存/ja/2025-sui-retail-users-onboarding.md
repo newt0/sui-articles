@@ -1,10 +1,12 @@
-[2025 in Review: Making Sui Easier for Users](https://blog.sui.io/2025-sui-retail-users-onboarding/)
+#  2025年を振り返って: Suiをユーザーにとってより使いやすく [Sui Foundation Blog]
 
-## 2025年を振り返って: Suiをユーザーにとってより使いやすく
-
-よりシンプルなオンボーディング、よりアプローチしやすいDeFi、そしてSuiエコシステム全体でBitcoinを使用する実用的な方法が特徴的だった1年
+よりシンプルなオンボーディング、よりアプローチしやすいDeFi、そしてSuiエコシステム全体でBitcoinを使用する実用的な方法が特徴的だった1年。
 
 ![2025 in Review: Making Sui Easier for Users](https://blog.sui.io/content/images/size/w2000/2025/12/Blog_1218_Sui-2025-Built-for-Everyday-Users.png)
+
+:::note
+元記事: [2025 in Review: Making Sui Easier for Users](https://blog.sui.io/2025-sui-retail-users-onboarding/)
+:::
 
 ## 主なポイント
 

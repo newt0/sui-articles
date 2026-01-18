@@ -1,4 +1,16 @@
-[Exploring the Bitcoin-Backed Assets Powering BTCfi on Sui](https://blog.sui.io/bitcoin-backed-assets-powering-btcfi/)
+---
+title: Sui上のBTCfiを支えるビットコイン担保資産を探る [Sui Foundation Blog]
+tags: SUI BTC Blockchain BTCFi DeFi
+author: nft
+slide: false
+---
+Sui上で、ビットコインを担保にした資産が続々と登場し、ビットコインに新たな活気をもたらしています。これにより、ビットコインの移動、連携、価値創造の方法が再定義されつつあります。
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1926720/0862cfe6-dbce-4662-a419-df6d8e78dbf8.png)
+
+:::note
+元記事: [Exploring the Bitcoin-Backed Assets Powering BTCfi on Sui](https://blog.sui.io/bitcoin-backed-assets-powering-btcfi/)
+:::
 
 Bitcoinは長い間デジタルゴールドと考えられてきましたが、最近まではプログラマブルではありませんでした。Suiはそれを変えます。BTCfiの台頭により、ユーザーは今やBTCを簡単にSuiに移動し、さまざまなDeFiプロダクト全体で活用できるようになりました。しかし、Sui上の2つのBitcoin担保アセットが同じように作られているわけではありません。それぞれがブリッジング、カストディ、統合に対して異なるアプローチを取り、トラストモデルと設計哲学の幅広いスペクトルを反映しています。
 

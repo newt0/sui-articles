@@ -1,4 +1,16 @@
-[How to DeFi on Sui](https://blog.sui.io/how-to-defi-on-sui/)
+---
+title:  SuiのDeFiの始め方 [Sui Foundation Blog]
+tags: SUI Web3 Blockchain Ethereum 仮想通貨
+author: nft
+slide: false
+---
+SuiのDeFi（分散型金融）の現状と、DeFiアプリやユーザーがSuiで得られる独自のメリットについて解説します。
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1926720/99c3cc43-4735-48b9-b4d9-670497789b05.png)
+
+:::note
+元記事: [How to DeFi on Sui](https://blog.sui.io/how-to-defi-on-sui/)
+:::
 
 トークンのスワップ、NFTの世界への参入、または単に資産を貸し出して報酬を得たい場合など、SuiのDeFiエコシステムには誰にでも何かがあります。Sui DeFiは、Suiネイティブのプリミティブのおかげで、ユニークで強力なアプリケーションで満たされています。[これらのプリミティブは、DeFiアプリを支援し](https://blog.sui.io/sui-primitives-help-defi-flourish/)、[DeepBook](https://www.deepbook.tech/?ref=blog.sui.io)を介した流動性ブートストラッピングなどの一般的な課題に対処します。
 

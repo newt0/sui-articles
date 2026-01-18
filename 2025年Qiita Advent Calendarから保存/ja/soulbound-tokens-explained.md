@@ -1,4 +1,16 @@
-[Soulbound Tokenのすべて](https://blog.sui.io/soulbound-tokens-explained/)
+---
+title:  Soulbound Tokenのすべて [Sui Foundation Blog]
+tags: SUI Blockchain sbt NFT Tokeneconomics
+author: nft
+slide: false
+---
+譲渡不可能なNFT、すなわち「ソウルバウンドNFT」や「トークン」は、所有権を固定する必要がある場合に強力なユースケースを解き放ちます。
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1926720/e2599f79-51bd-49ad-a680-caef505f4083.png)
+
+:::note
+元記事: [All About Soulbound Tokens](https://blog.sui.io/soulbound-tokens-explained/)
+:::
 
 Ethereumの共同創設者Vitalik Buterinによって[造語された](https://vitalik.eth.limo/general/2022/01/26/soulbound.html?ref=blog.sui.io)Soulbound Token(SBT)は、永続的で譲渡不可能になるように設計されたNFTです。自由に取引できる典型的なNFTとは異なり、SBTは元のアカウントに紐付けられたままであり、ゲーム内のスキルや成果が個々のユーザーやアカウントに紐付けられ、譲渡や取引ができないのと同様です。SBTは、デジタル世界における人のアイデンティティ、資格、または成果を表すのに有用です。
 

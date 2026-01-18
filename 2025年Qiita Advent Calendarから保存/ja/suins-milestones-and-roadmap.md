@@ -1,3 +1,9 @@
+---
+title: SuiNSの成果と将来展望 [Sui Foundation Blog]
+tags: SUI Web3 Blockchain ENS SuiNS
+author: nft
+slide: false
+---
 シンプルなネーミングサービスだったSuiNSが、コミュニティ主導のIDソリューションへと進化する道のりを辿ります。
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1926720/ef47d569-4aeb-4123-9aa0-f1cc935174b8.png)

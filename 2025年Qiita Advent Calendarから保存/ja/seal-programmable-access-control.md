@@ -1,10 +1,12 @@
-[Seal: 実世界のアプリケーションのためのプログラマブルなアクセス制御](https://blog.sui.io/seal-programmable-access-control/)
-
-## Seal: 実世界のアプリケーションのためのプログラマブルなアクセス制御
+# Seal: 実世界のアプリケーションのためのプログラマブルなアクセス制御 [Sui Foundation Blog]
 
 Seal は、プロダクトが最も重要な場所、つまりデータの境界でアクセスを制御することを可能にします。
 
 ![Seal: Programmable Access Control for Real-World Apps](https://blog.sui.io/content/images/size/w2000/2025/11/3_Blog-Header_Seal-Access-Control--1-.png)
+
+:::note
+※翻訳元記事: [Seal: Programmable Access Control for Real-World Apps](https://blog.sui.io/seal-programmable-access-control/)
+:::
 
 ほとんどのアクセスシステムは、プロダクトが実際にどのように機能するかを考慮して構築されていません。従来の Web2 Cloud Identity and Access Management (IAM) ツールは、インフラストラクチャを中心に設計されており、誰がどの API を呼び出せるかを制御するものであり、アクセスがデータ、コンテキスト、タイミングに依存するプロダクトやユーザーに焦点を当てていません。
 

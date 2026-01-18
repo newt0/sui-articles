@@ -1,4 +1,16 @@
-[Slush Strategies: ウォレット内でDeFiから収益を獲得](https://blog.sui.io/slush-strategies-defi-inside-your-wallet/)
+---
+title: Slush Strategies: ウォレット内でDeFiから収益を獲得 [Sui Foundation Blog]
+tags: SUI Blockchain DeFi Slush Web3
+author: nft
+slide: false
+---
+DeFi（分散型金融）で稼ぐ新しい方法。外部アプリや複雑な手順は一切不要です。戦略を選んでタップするだけで、SlushがDeFiプロトコルへのアクセスを簡単にご提供します。
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1926720/320b4adc-0512-474d-835b-3fe4e84e4c88.png)
+
+:::note
+元記事: [Slush Strategies: Earn From DeFi Inside Your Wallet](https://blog.sui.io/slush-strategies-defi-inside-your-wallet/)
+:::
 
 ## 主なポイント
 

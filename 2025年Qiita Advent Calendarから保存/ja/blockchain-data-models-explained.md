@@ -1,4 +1,16 @@
-[ブロックチェーンデータモデルのすべて](https://blog.sui.io/blockchain-data-models-explained/)
+---
+title:  ブロックチェーンデータモデルのすべて [Sui Foundation Blog]
+tags: SUI Web3 Blockchain オブジェクト指向 仮想通貨
+author: nft
+slide: false
+---
+Suiのオブジェクト指向モデルが新たな可能性を切り拓きます。
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1926720/5abd91ba-0545-4d92-ae60-3496ddcee02c.png)
+
+:::note
+元記事: [All About Blockchain Data Models](https://blog.sui.io/blockchain-data-models-explained/)
+:::
 
 ブロックチェーン技術は、暗号技術やコンセンサスアルゴリズム以上に、情報の構造化、検証、保存の方法を規定するデータモデルに依存しています。データモデルは、アカウントの管理方法、ステート遷移の発生方法、そして最終的にユーザーや開発者がシステムとどのようにやり取りするかを定義します。
 

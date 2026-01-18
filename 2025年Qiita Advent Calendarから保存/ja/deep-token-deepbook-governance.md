@@ -1,10 +1,16 @@
-[The DEEP Token's Role in DeepBook Governance](https://blog.sui.io/deep-token-deepbook-governance/)
-
-## DeepBook ガバナンスにおける DEEP トークンの役割
-
+---
+title: DeepBook ガバナンスにおける DEEP トークンの役割 [Sui Foundation Blog]
+tags: SUI Web3 Blockchain Tokeneconomics DeeoBook
+author: nft
+slide: false
+---
 DeepBook バージョン 3 のローンチと DEEP トークンの導入により、Sui の DeFi エコシステムは、より高い効率性、流動性、そしてコミュニティ主導のガバナンスに向けて準備が整いました。
 
 ![The DEEP Token's Role in DeepBook Governance](https://blog.sui.io/content/images/size/w2000/2024/10/09-29-Blog-Header--1-.png)
+
+:::note
+元記事: [The DEEP Token's Role in DeepBook Governance](https://blog.sui.io/deep-token-deepbook-governance/)
+:::
 
 本日、[DeepBook](https://www.deepbook.tech/?ref=blog.sui.io) バージョン 3 が [DEEP トークン](https://www.deepbook.tech/deep-token?ref=blog.sui.io)とともに Mainnet 上で正式にローンチされ、その進化における大きなマイルストーンを迎えました。このアップグレードにより、ユーザーとマーケットメイカーは、コミュニティ主導のガバナンスを通じたより大きな分散化への道を切り開く、洗練されたインセンティブの恩恵を受けることができます。
 

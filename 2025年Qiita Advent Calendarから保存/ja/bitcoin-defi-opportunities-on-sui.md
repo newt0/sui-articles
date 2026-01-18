@@ -1,12 +1,16 @@
-[BTCfi on Sui: A Better Way to Use Bitcoin](https://blog.sui.io/bitcoin-defi-opportunities-on-sui/)
-
-## BTCfi on Sui: Bitcoinをより良く活用する方法
-
+---
+title:  BTCfi on Sui: Bitcoinをより良く活用する方法 [Sui Foundation Blog]
+tags: SUI BTC Blockchain BTCFi DeFi
+author: nft
+slide: false
+---
 SuiにおけるBTCfiエコシステムの成長と、それがBitcoinに真のDeFiユーティリティをもたらす仕組みを探ります。
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![BTCfi on Sui: A Better Way to Use Bitcoin](https://blog.sui.io/content/images/size/w2000/2025/07/07-28-Blog-Header.jpg)
+
+:::note
+元記事: [BTCfi on Sui: A Better Way to Use Bitcoin](https://blog.sui.io/bitcoin-defi-opportunities-on-sui/)
+:::
 
 Bitcoinは長い間、受動的な価値保存手段として知られていましたが、[Sui上では、さらなる可能性を秘めています](https://blog.sui.io/reimagining-bitcoins-role-in-sui-defi/)。[成長し続けるBTC担保資産のセット](https://blog.sui.io/bitcoin-backed-assets-powering-btcfi/)とコンポーザブルなプロトコルにより、ユーザーはSuiエコシステム全体でBTCを移動させ、活用できるようになりました。
 

@@ -1,12 +1,16 @@
-[Sui Mainnet上のNautilusで改ざん防止Oracleを構築](https://blog.sui.io/nautilus-tamper-proof-oracles/)
-
-## Sui Mainnet上のNautilusで改ざん防止Oracleを構築
-
+---
+title: Sui Mainnet上のNautilusで改ざん防止Oracleを構築 [Sui Foundation Blog]
+tags: SUI Blockchain nautilus tee move
+author: nft
+slide: false
+---
 NautilusがSui Mainnet上で稼働を開始し、Web3アプリに改ざん防止可能で検証可能なオフチェーン計算をもたらします。
 
-* [![Sui Foundation](https://blog.sui.io/content/images/size/w100/2023/04/Sui_Droplet_Logo_Blue-3.png)](https://blog.sui.io/author/sui-foundation/)
-
 ![Sui Mainnet上のNautilusで改ざん防止Oracleを構築](https://blog.sui.io/content/images/size/w2000/2025/06/27-05-2-Blog-Header.png)
+
+:::note
+元記事: [Sui Mainnet上のNautilusで改ざん防止Oracleを構築](https://blog.sui.io/nautilus-tamper-proof-oracles/)
+:::
 
 Web3インフラストラクチャの重要な要素である[Nautilus](http://sui.io/nautilus?ref=blog.sui.io)が、Sui Mainnet上で稼働を開始しました。Nautilusを使用することで、開発者はアプリ固有のオフチェーン計算を改ざん防止のTrusted Execution Environments（TEE、信頼できる実行環境）にオフロードでき、オフチェーンロジックの柔軟性を保ちながら、オンチェーン実行の暗号学的な信頼保証を維持できます。
 

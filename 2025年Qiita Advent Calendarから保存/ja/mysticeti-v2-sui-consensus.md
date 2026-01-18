@@ -1,6 +1,17 @@
-[Mysticeti v2: Faster and Lighter Sui Transaction Processing](https://blog.sui.io/mysticeti-v2-sui-consensus/)
+---
+title:  Mysticeti v2: より高速・軽量なSuiトランザクション処理 [Sui Foundation Blog]
+tags: SUI Web3 Blockchain Mysticeti 有向非巡回グラフ
+author: nft
+slide: false
+---
+Mysten Labsのエンジニアが、Mysticeti v2でSuiのコンセンサスをどのように改良し、よりスマートで効率的なトランザクション処理を実現したのかを内部から解説。
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1926720/633f2e50-c2da-4467-88f9-02549851ab63.png)
 
 *著者: Tasos Kichidis (Software Engineer), Lefteris Kokoris-Kogias (Research Scientist), Arun Koshy (Software Engineer), Maxwell Tian (Software Engineer)*
+
+:::note
+元記事: [Mysticeti v2: Faster and Lighter Sui Transaction Processing](https://blog.sui.io/mysticeti-v2-sui-consensus/)
+:::
 
 [Mysticeti](https://sui.io/mysticeti?ref=blog.sui.io)は、Suiを支えるコンセンサスプロトコルです。2024年7月にMainnetで初めてローンチされ、[有向非巡回グラフ(DAG)](https://blog.sui.io/all-about-directed-acyclic-graphs/)に基づいた新世代の高性能コンセンサスを導入しました。この設計により、Suiは業界をリードする応答性、低レイテンシ、スケーラビリティを実現しました。
 

@@ -1,10 +1,16 @@
-[Better AI Starts with Verifiable Data via The Sui Stack](https://blog.sui.io/verifiable-ai-data-sui-stack/)
-
-## Sui Stack による検証可能なデータで、より良い AI を実現する
-
+---
+title:  Sui Stack による検証可能なデータで、より良い AI を実現する [Sui Foundation Blog]
+tags: SUI Blockchain AI AIエージェント Walrus
+author: nft
+slide: false
+---
 AI の未来は、よりスマートなモデルだけではありません。検証可能なデータこそが鍵であり、Sui Stack はそれを可能にする信頼のレイヤーを構築しています。
 
 ![Better AI Starts with Verifiable Data via The Sui Stack](https://blog.sui.io/content/images/size/w2000/2025/10/10-28-Blog-Header.png)
+
+:::note
+元記事: [Better AI Starts with Verifiable Data via The Sui Stack](https://blog.sui.io/verifiable-ai-data-sui-stack/)
+:::
 
 AI の採用は急速に進んでいますが、その基盤はまだ追いついていません。
 

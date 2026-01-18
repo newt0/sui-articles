@@ -1,12 +1,16 @@
-[MEV on Sui: Current State and Next Steps](https://blog.sui.io/mev-on-sui-current-state/)
-
-## MEV on Sui: 現状と次のステップ
-
+---
+title:  MEV on Sui: 現状と次のステップ [Sui Foundation Blog]
+tags: SUI Web3 Blockchain MEV オブジェクト指向
+author: nft
+slide: false
+---
 Sui上でのMEVの仕組み—トランザクション順序付け、保護、公正な競争のためのメカニズム。
 
-* [![Mysten Labs](https://blog.sui.io/content/images/size/w100/2023/11/MystenLabs_Logomark_Red-4.png)](https://blog.sui.io/author/mysten/)
-
 ![MEV on Sui: Current State and Next Steps](https://blog.sui.io/content/images/size/w2000/2025/02/02-49-Blog-Header.png)
+
+:::note
+元記事: [MEV on Sui: Current State and Next Steps](https://blog.sui.io/mev-on-sui-current-state/)
+:::
 
 最大抽出可能価値(MEV: Maximum extractable value)は、トランザクションの順序付けと裁定機会を扱うため、ブロックチェーン業界で大きなトピックとなっています。透明性の確保、トランザクションの保護、健全なネットワークの維持、参加者への報酬という観点から、私たちはSui上のMEVをガイドするためにSui改善提案(SIP)やその他のメカニズムを慎重に実装してきました。
 

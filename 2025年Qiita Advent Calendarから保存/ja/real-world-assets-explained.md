@@ -1,10 +1,16 @@
-[All About Real World Assets](https://blog.sui.io/real-world-assets-explained/)
-
-## Real World Assets(現実世界資産)について
-
+---
+title: RWAについて徹底解説 [Sui Foundation Blog]
+tags: SUI Web3 Blockchain RWA NFT
+author: nft
+slide: false
+---
 Real World Assetsのトークン化は、従来の金融とDeFiの間のギャップを埋めるのに役立ちます。
 
 ![All About Real World Assets](https://blog.sui.io/content/images/size/w2000/2024/08/07-41-Blog-Header.png)
+
+:::note
+元記事: [All About Real World Assets](https://blog.sui.io/real-world-assets-explained/)
+:::
 
 Real World Assets(RWA)のトークン化は、従来の物理資産がデジタルで管理・取引される方法を再構築しています。これらの資産をオンチェーン化し、DeFiエコシステムに統合することで、トークン化されたRWAは不動産、商品、美術品などの資産に対して、より高いアクセシビリティ、効率性、機能性を提供します。
 
